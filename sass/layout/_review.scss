@@ -1,0 +1,97 @@
+/************************************
+   Review
+*************************************/
+.review {
+	margin-top: 100px;
+	margin-bottom: 100px;
+	.review-form {
+		padding: 60px;
+		background: #FFFFFF;
+		box-shadow: 0px 5px 45px rgba(200, 203, 215, 0.499645);
+		margin-bottom: 100px;
+	}
+	.reviewer-group {
+		margin-bottom: 20px;
+		.reviewer-comment {
+			padding: 40px;
+			background-color: #fff;
+			border: 1px solid $line;
+			transition: 0.3s ease-out;
+			width: calc(33.3333% - 20px);
+			margin-bottom: 30px;
+			&:hover {
+				box-shadow: 0px 15px 45px rgba(200, 203, 215, 0.499645);
+			}
+			.reviewer-comment_head {
+				display: flex;
+				align-items: center;
+				margin-bottom: 30px;
+				.reviewer__avatar {
+					height: 80px;
+					width: 80px;
+					object-fit: cover;
+					border-radius: 999px;
+					margin-right: 20px;
+				}
+				.reviewer__info {
+					h5 {
+						margin-bottom: 10px;
+					}
+					p {
+						@include typo(12px,400,$pink,1);
+					}
+				}
+			}
+			.reviewer-comment_content {
+				p {
+					@include typo(18px,400,$title,30px);
+				}
+			}
+		}
+	}
+}
+
+@include mobile {
+	.review {
+		margin-top: 50px;
+		margin-bottom: 50px;
+		.review-form {
+			margin-bottom: 50px;
+		}
+		.reviewer-group {
+			.reviewer-comment {
+				width: 100%;
+			}
+		}
+	}
+}
+
+@include tablet {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	.review {
+		.review-form {
+			margin-bottom: 50px;
+		}
+		.reviewer-group {
+			.reviewer-comment {
+				width: 100%;
+			}
+		}
+	}
+}
+
+@include small-desktop {
+	margin-top: 70px;
+		margin-bottom: 70px;
+	.review {
+		.review-form {
+			margin-bottom: 70px;
+		}
+		.reviewer-group {
+			.reviewer-comment {
+				width: calc(50% - 15px );
+			}
+		}
+	}
+}

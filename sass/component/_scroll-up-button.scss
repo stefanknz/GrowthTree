@@ -1,0 +1,18 @@
+/************************************
+   Scroll up button
+*************************************/
+#scrollUp {
+	bottom: 30px;
+	right: 30px;
+	background-color: $white;
+	padding: 15px;
+	border-radius: 999px;
+	color: $title;
+	border: 2px solid $blue-green;
+	transition: 0.3s ease-out;
+	&:hover {
+		background-color: $green;
+		border-color: $green;
+		color: $white;
+	}
+}

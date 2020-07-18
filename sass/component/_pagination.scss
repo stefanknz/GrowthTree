@@ -1,0 +1,18 @@
+/************************************
+   Pagination
+*************************************/
+.pagination {
+	.pagenumber {
+		@include button($white,$regular,16px,2px,16px 20px,1px,$line,$blue,$white,$blue);
+		margin: 0 7px;
+		@include margin-oc;
+		&.active {
+			background-color: $blue;
+			border-color: $blue;
+			color: $white;
+			&:before {
+				display: none;
+			}
+		}
+	}
+}

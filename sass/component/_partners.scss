@@ -1,0 +1,26 @@
+/************************************
+    Partners
+*************************************/
+.partners {
+	background-color: #F7F5EF;
+	.partners-group {
+		padding: 40px 0;
+		.slick-track {
+			display: flex;
+			align-items: center;
+		}
+		.partner {
+			img {
+				margin: auto;
+			    filter: grayscale(100%);
+			    opacity: 0.5;
+			    transition: 0.3s ease-out;
+			}
+			&:hover {
+				img {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}

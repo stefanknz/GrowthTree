@@ -1,0 +1,106 @@
+/************************************
+    Case study
+*************************************/
+.case-study {
+	margin-top: 100px;
+	.case-study--title {
+		@include typo(26px,700,$title,1);	
+	}
+	.case-study--small-title {
+		@include typo(16px,700,$title,22px);	
+		margin-bottom: 5px;
+	}
+	.case-study_detail {
+		.info-block {
+			background-color: #F7F5EF;
+			padding: 30px;
+			p {
+				@include typo(14px,400,$regular,40px);
+				span {
+					font-family: 'cerebrisans-bold';
+					margin-left: 10px;
+					color: $title;
+				}
+			}
+		}
+	}
+	.featured-cases {
+		.featured-cases_bottom {
+			.study-case-group {
+				margin-left: 0;
+				margin-right: 0;
+				.case-block {
+					margin-left: 0;
+					margin-right: 0;
+					margin-bottom: 30px;
+					box-shadow: 0px 15px 45px rgba(200, 203, 215, 0.499645);
+					background-color: $white;
+				}
+			}
+		}
+	}
+	.h3-section4 {
+		padding-top: 0;
+		padding-bottom: 0;
+		background-color: $trans;
+		.h2-section3 {
+			padding-top: 0;
+			padding-bottom: 0;
+			background-color: $trans;
+		}
+	}
+}
+
+@include mobile {
+	.case-study {
+		margin-top: 50px;
+		margin-bottom: 50px;
+		.case-study_detail {
+			.info-block {
+				margin-bottom: 30px;
+			}
+			.planning {
+				margin-bottom: 30px;
+			}
+			.case-study-content {
+				.planning {
+					margin-bottom: 30px;
+				}
+			}
+		}
+	}
+}
+
+@include tablet {
+	.case-study {
+		margin-top: 50px;
+		margin-bottom: 50px;
+		.case-study_detail { 
+			.planning {
+				margin-bottom: 30px;
+			}
+			.case-study-content {
+				.planning {
+					margin-bottom: 30px;
+				}
+			}
+		}
+	}
+}
+
+@include tablet {
+	.case-study {
+		margin-top: 50px;
+		margin-bottom: 50px;
+		.case-study_detail { 
+			.planning {
+				margin-bottom: 30px;
+			}
+			.case-study-content {
+				.planning {
+					margin-bottom: 30px;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,75 @@
+/************************************
+	Tabs
+*************************************/
+
+.tab-block {
+	padding: 0;
+	border: 0;
+	&.ui-widget.ui-widget-content {
+		padding: 0;
+		border: 0;
+	}
+	&.pink {
+		.ui-tabs-nav {
+			&.tab-list {
+				.tab-name {
+					a {
+						@include udl-animation($pink);
+						&:after {
+							height: 4px;
+						}
+					}
+				}
+			}
+		}
+	}
+	.ui-tabs-nav {
+		&.tab-list {
+			background-color: $trans;
+			padding: 0;
+			border: 0;
+			margin-bottom: 40px;
+			display: flex;
+			overflow-x: auto;
+			white-space: nowrap;
+			.tab-name {
+				background-color: $trans;
+				border: 0;
+				margin: 0 15px;
+				@include margin-oc;
+				a {
+					@include link(20px,700,$disable,1,$title);
+					@include udl-animation($blue-green);
+					padding: 0 0 7px 0;
+					&:after {
+						height: 4px;
+					}
+				}
+				&.ui-state-active {
+					a {
+						color: $title;
+						&:after {
+							right: 0;
+						}
+					}
+				}
+				&.ui-state-focus {
+					a {
+						outline: 0;
+						box-shadow: none;
+						border: 0;
+					}
+				}
+			}
+		}
+	}
+	.tab-box {
+		&.ui-tabs-panel {
+			padding: 0;
+			p {
+				@include typo(18px,400,$regular,30px);
+				margin-bottom: 30px;
+			}
+		}
+	}
+}

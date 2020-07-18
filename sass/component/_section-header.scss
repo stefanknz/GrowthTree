@@ -1,0 +1,115 @@
+/************************************
+    Section header
+*************************************/
+// Only title
+.section-header-style-1 {
+	.h1 {
+		margin-bottom: 65px;
+	}
+}
+
+
+// Title + p
+.section-header-style-2 {
+	.h1 {
+		margin-bottom: 15px;
+	}
+	p {
+		margin-bottom: 65px;
+		
+	}
+}
+
+// Title + subtitle + p
+.section-header-style-3 {
+	.h1 {
+		margin-bottom: 10px;
+	}
+	.h6 {
+		margin-bottom: 30px;
+	}
+	p {
+		margin-bottom: 50px;
+	}
+}
+
+@include mobile {
+	.section-header-style-1 {
+		.h1 {
+			margin-bottom: 30px;
+		}
+	}
+	.section-header-style-2 {
+		p {
+			margin-bottom: 50px;
+		}
+	}
+	.section-header-style-3 {
+		.h1 {
+			margin-bottom: 10px;
+		}
+		.h6 {
+			margin-bottom: 20px;
+		}
+		p {
+			margin-bottom: 30px;
+		}
+	}
+}
+
+@include tablet {
+	.section-header-style-1 {
+		.h1 {
+			margin-bottom: 30px;
+		}
+	}
+	.section-header-style-2 {
+		.h1 {
+			margin-bottom: 15px;
+		}
+		p {
+			margin-bottom: 30px;
+			max-width: 480px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+	.section-header-style-3 {
+		.h1 {
+			margin-bottom: 10px;
+		}
+		.h6 {
+			margin-bottom: 20px;
+		}
+		p {
+			margin-bottom: 30px;
+		}
+	}
+}
+
+@include small-desktop {
+	.section-header-style-1 {
+		.h1 {
+			margin-bottom: 50px;
+		}
+	}
+	.section-header-style-2 {
+		.h1 {
+			margin-bottom: 15px;
+		}
+		p {
+			margin-bottom: 40px;
+		}
+	}
+	.section-header-style-3 {
+		.h1 {
+			margin-bottom: 10px;
+		}
+		.h6 {
+			margin-bottom: 30px;
+		}
+		p {
+			margin-bottom: 40px;
+		}
+	}
+}

@@ -1,0 +1,97 @@
+/************************************
+	Services detail page
+*************************************/
+.services-detail {
+	margin-top: 100px;
+	margin-bottom: 100px;
+	.service-title  {
+		@include typo(26px,700,$title,38px);
+		margin-bottom: 10px;
+	}
+	.services-detail_contents {
+		.serivces-detail_header {
+			margin-bottom: 30px;
+			h1 {
+				margin-right: 30px;
+			}
+		}
+		ul {
+			li {
+				@include typo(16px,400,$regular,32px);
+			}
+		}
+		.h1-lastest-insight {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+		.h1-lastest-insight {
+			.lastest-insights {
+				.insight-public-date {
+					.inline-block.author {
+						color: $blue;
+					}
+				}
+				.feature-lastest-insights {
+					.feature-lastest-insights_content {
+						.insight-tag {
+							margin-bottom: 5px;
+						}
+						.insight-title {
+							@include link(20px,700,$title,32px,$pink);
+							margin-bottom: 5px;
+						}
+					}
+				}
+				.list-lastest-insights_group {
+					.list-lastest-insight {
+						.list-lastest-insight_content {
+							.list-insight--title {
+								@include link(18px,700,$title,30px,$pink);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+ 
+
+@include mobile {
+	.services-detail {
+		margin-top: 50px;
+		margin-bottom: 50px;
+		.services-detail_contents {
+			.serivces-detail_header {
+				overflow-x: auto;
+				overflow-y: hidden;
+				white-space: nowrap;
+			}
+		}
+	}
+}
+
+@include tablet {
+	.services-detail {
+		margin-top: 50px;
+		margin-bottom: 50px;
+	}
+	.services-detail_sidebar {
+		&.fixed {
+			width: 50vw;
+		}
+	}
+}
+
+@include small-desktop {
+	.services-detail {
+		margin-top: 70px;
+		margin-bottom: 70px;
+	}
+	.services-detail_sidebar {
+		&.fixed {
+			width: 50vw;
+		}
+	}
+}

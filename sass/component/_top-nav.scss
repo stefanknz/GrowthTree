@@ -1,0 +1,126 @@
+/************************************
+   Top Nav
+*************************************/
+.top-nav {
+	background: $blue;
+	padding: 0.809rem 0;
+	.top-nav_left {
+		.top-nav_left--content {
+			&.email {
+				margin-right: 35px;
+			}		
+			@include typo(15px,400,$white,1);
+			i {
+				margin-right: 10px;
+				font-size: 15px;
+			}
+		}
+	}
+	.top-nav_right {
+		.language {
+			margin-right: 25px;
+			position: relative;
+			&:hover {
+				.options-box {
+					display: block; 
+				}
+			}
+			.select {
+				@include select($white,$trans,0px,$trans,0px);
+				font-size: 16px;
+				.flag {
+					margin-right: 8px;
+					img {
+						height: 20px;
+						width: 20px;
+						object-fit: cover;
+						border-radius: 999px;
+					}
+				}
+			}
+			.options-box {
+				position: absolute;
+				min-width: 100px;
+				background-color: $white;
+				box-shadow: 0px 15px 45px rgba(200, 203, 215, 0.499645);
+				z-index: 15;
+				padding: 10px;
+				left: 0;
+				top: 100%;
+				display: none;
+				ul {
+					li {
+						padding: 10px 0;
+						.option {
+							@include link(15px,400,$regular,1,$title);
+							&:after {
+								display: none;
+							}
+						}
+					}
+				}
+			}	
+		}
+		.office {
+			@extend .language;
+			.select {
+				@include select($white,$red,0px,$trans,15px 20px);
+				font-family: 'cerebrisans-bold';
+			}
+			.options-box {
+				width: 100%;
+				padding: 10px 20px;
+				ul {
+					li {
+						.option {
+							background-color: $white;
+							padding: 0;
+						}
+					}
+				}
+			}
+		}
+		
+		.social {
+			a {
+				@include icon-link(15px,$white,1,$white);
+				margin: 0 10px;
+				@include margin-oc;
+			}
+		}
+	}
+}
+//Top nav style 2
+.top-nav.top-nav-style2 {
+	background: $white;
+	.top-nav_left {
+		.notification {
+			@include typo(15px,400,$title,20px);
+		}
+		.top-nav_left--content {	
+			@include typo(15px,400,$title,1);
+			i {
+				margin-right: 10px;
+				font-size: 15px;
+				color: $blue;
+			}
+		}
+	}
+	.top-nav_right {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		.language {
+			padding: 10px 25px 10px 0;
+			border-right: 1px solid $line;
+		}
+		.select {
+			color: $title;
+		}
+		.social {
+			a {
+				@include icon-link(15px,$title,1,$blue);
+			}
+		}
+	}
+}

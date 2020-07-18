@@ -1,0 +1,53 @@
+/************************************
+    Call to action
+*************************************/
+.call-to-action {
+	padding: 30px 0;
+	background-color: $blue-green;
+	&.bg-blue-green {
+		background-color: $blue-green;
+		.btn-white {
+			@include button($white,$blue-green,16px,0px,15px 40px,2px,$white,$blue-green,$white,$white);
+		}
+	}
+	.call-to-action_content {
+		.cta-title {
+			color: $white;
+			margin-bottom: 10px;
+		}
+		.cta-pragraph {
+			@include typo(14px,400,$white,22px);
+		}
+	}
+	.cta-btn {
+		border: 0px;
+	}
+}
+
+@include mobile {
+	.call-to-action {
+		.call-to-action_content {
+			margin-bottom: 30px;
+			.cta-title {
+				margin-bottom: 15px;
+			}
+		}
+	}
+}
+
+@include tablet {
+	.call-to-action {
+		.call-to-action_content {
+			margin-bottom: 30px;
+
+		}
+	}
+}
+
+@include small-desktop {
+	.call-to-action {
+		.call-to-action_content {
+			margin-bottom: 30px;
+		}
+	}
+}

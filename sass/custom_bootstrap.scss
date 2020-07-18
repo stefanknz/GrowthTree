@@ -1,0 +1,66 @@
+/************************************
+    Custom bootsrap
+*************************************/
+
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
+
+$headings-margin-bottom: 0;
+$label-margin-bottom: 0;
+
+$grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+	xxl: 1400px,
+	xxxl: 1770px
+);
+$container-max-widths: (
+  sm: 100%,
+  md: 100%,
+  lg: 100%,
+  xl: 1170px,
+);
+$paragraph-margin-bottom: 0;
+
+.azir-container {
+  max-width: 1170px;
+  @include make-container(30px);
+  @include media-breakpoint-up(sm) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  @include media-breakpoint-up(lg) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.azir-container-full-fluid {
+    @include make-container(0px);
+}
+
+.azir-container-fluid {
+    @include make-container(60px);
+    max-width: 1800px;
+}
+
+.azir-container-fullfluid {
+  @include make-container(0);
+  max-width: 1920px;
+}
+
+.container {
+  
+  @include media-breakpoint-up(md) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@import "node_modules/bootstrap/scss/utilities/text";
+@import "node_modules/bootstrap/scss/bootstrap-grid";

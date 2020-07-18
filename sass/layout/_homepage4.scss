@@ -1,0 +1,205 @@
+/************************************
+   	Homepage 04
+*************************************/
+.h4-section1 {
+	margin-top: 100px;
+	margin-bottom: 100px;
+	background-color: #F6F5F0;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	.h1-section2 {
+		margin-top: 0;
+	}
+	.benifit-illus {
+		img {
+			max-width: 100%;
+		}
+	}
+}
+
+.h4-section2 {
+	@extend .h1-section2;
+	margin-bottom: 100px;
+	.data-proof {
+		margin-top: 0!important;
+		background-color: $trans;
+		padding-top: 0;
+		padding-bottom: 0;
+		.data-group {
+			.data-icon {
+				i {
+					color: $green;
+				}
+			}
+		}
+	}
+}
+
+.h4-section3 {
+	@extend .h2-section2;
+	margin-top: 100px;
+	.benefit-detail {
+		padding-left: 0;
+		.benefit-detail_group {
+			text-align: center;
+			.benefit-icon {
+				height: 100px;
+				width: 100px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				box-shadow: 0px 15px 45px rgba(200, 203, 215, 0.499645);
+				margin: auto;
+				border-radius: 999px;
+				margin-bottom: 20px;
+				i {
+					font-size: 35px;
+					color: $green;
+				}
+			}
+			.benefit-content {
+				.benefit-content--title {
+					margin-bottom: 	15px;
+				}
+			}
+		}
+	}
+}
+
+.h4-section4 {
+	@extend .h3-section4;
+	background-color: $trans;
+	padding-top: 0;
+	padding-bottom: 0;
+	.h4-section4_introduction {
+		h1 {
+			margin-bottom: 30px;
+		}
+		p {
+			margin-bottom: 30px;
+		}
+		ul {
+			li {
+				@include typo(18px,400,$title,40px);
+				&:before {
+					content: "●";
+					margin-right: 15px;
+					color: $green;
+				}
+			}
+		}
+	}	
+	img {
+		max-width: 100%;
+	}
+}
+
+.h4-section5 {
+	background-color: #F6F5F0;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	.quick-contact {
+		box-shadow: 0px 15px 45px rgba(200, 203, 215, 0.499645);
+	}
+	.h2-section3 {
+		margin-top: 50px;
+		margin-bottom: 0;
+		padding-top: 0;
+		padding-bottom: 0;
+		background-color: $trans;
+		h1 {
+			margin-bottom: 30px;
+		}
+	}
+}
+
+@include mobile {
+	.h4-section1 {
+		margin-top: 50px;
+		margin-bottom: 50px;
+		padding-top: 50px;
+		padding-bottom: 50px;
+		.h1-section2 {
+			margin-bottom: 30px;
+		}
+
+	}
+	.h4-section2 {
+		margin-bottom: 50px;
+	}
+	.h4-section3 {
+		margin-top: 50px;
+		margin-bottom: 0px;
+	}
+	.h4-section4 {
+		.h4-section4_introduction {
+			margin-bottom: 30px;
+		}
+	}
+	.h4-section5 {
+		padding-top: 50px;
+		padding-bottom: 50px;
+		.h2-section3 {
+			margin-top: 30px;
+		}
+	}
+}
+
+@include tablet {
+	.h4-section1 {
+		margin-top: 50px;
+		margin-bottom: 50px;
+		padding-top: 50px;
+		padding-bottom: 50px;
+		.layout-2col-ti_left {
+			margin-bottom: 0;
+		}
+		.benifit-illus {
+			img {
+				display: none;
+			}
+		}
+	}
+	.h4-section2 {
+		margin-bottom: 50px;
+	}
+	.h4-section3 {
+		margin-top: 50px;
+		margin-bottom: 0px;
+	}
+	.h4-section4 {
+		.layout-2col-ti_left {
+			margin-bottom: 0;
+		}
+		img {
+			display: none;
+		}
+	}
+	.h4-section5 {
+		padding-top: 50px;
+		padding-bottom: 50px;
+		.h2-section3 {
+			margin-top: 30px;
+		}
+	}
+}
+
+@include small-desktop {
+	.h4-section1 {
+		margin-top: 70px;
+		margin-bottom: 70px;
+		padding-top: 70px;
+		padding-bottom: 70px;
+	}
+	.h4-section2 {
+		margin-bottom: 70px;
+	}
+	.h4-section3 {
+		margin-top: 70px;
+	}
+	.h4-section5 {
+		padding-top: 70px;
+		padding-bottom: 70px;
+	}
+}
+

@@ -1,0 +1,156 @@
+/************************************
+    Pricing
+*************************************/
+.pricing {
+	margin-top: 100px;
+	margin-bottom: 100px;
+	.plans-group {
+		#plane-choose {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 50px;
+			#plan-switch {
+				cursor: pointer;
+				height: auto;
+				width: 45px;
+				background-color: $white;
+				border: 2px solid $pink;
+				display: inline-block;
+				border-radius: 999px;
+				padding: 1px;
+				margin: 0 30px;
+				&.switched{
+					background-color: $pink;
+					.switch-btn {
+						background-color: $white;
+						margin-left: auto;
+					}
+				}
+				.switch-btn {
+					background-color: $pink;
+					height: 15px;
+					width: 15px;
+					border-radius: 999px;
+					transition: 0.3s ease-out;
+				}
+			}
+			.plan-type {
+				span {
+					font-size: 14px;
+					color: $pink;
+					margin-left: 5px;
+				}
+				&.active {
+					color: $title;
+				}
+			}
+		}
+		.planes_wrapper {
+			animation-duration: 0.5s;
+			.plane_detail {
+				border: 1px solid $line;
+				padding: 40px;
+				text-align: center;
+				background: #FFFFFF;
+				transition: 0.3s ease-out;
+				position: relative;
+				&:hover {
+					box-shadow: 0px 15px 45px rgba(200, 203, 215, 0.499645);
+					&:after {
+						width: 100%;
+					}
+				}
+				&:after {
+					content: "";
+					position: absolute;
+					display: block;
+					height: 5px;
+					width: 0;
+					background-color: $blue;
+					transition: 0.3s ease-out;
+					top: 0;
+					left: 0;
+				}
+				.plane-pack--title {
+					@include typo(24px,700,$title,1);
+					margin-bottom: 10px;
+				}
+				.plane-describe {
+					@include typo(16px,400,$regular,28px);
+					margin-bottom: 20px;
+				}
+				.plane-price {
+					@include typo(50px,700,$title,1);
+					display: block;
+					margin-bottom: 20px;
+					sup {
+						vertical-align: text-top;
+						font-size: 18px;
+						margin-right: 10px;
+					}
+					span {
+						font-size: 14px;
+						font-family: 'cerebrisans-regular';
+						color: $regular;
+					}
+				}
+				.access-btn {
+					@include button($white,$pink,12px,2px,10px 20px,1px,$pink,$pink,$white,$pink);
+					margin-bottom: 20px;
+				}
+				.plane-benefit {
+					margin-bottom: 30px;
+					li {
+						@include typo(16px,400,$title,32px);
+					}
+				}
+				.trial-btn {
+					@include button($white,$title,12px,2px,15px 35px,1px,$line,$pink,$white,$pink);
+				}
+			}
+		}
+	}
+}
+
+@include mobile {
+	.pricing {
+		margin-top: 50px;
+		margin-bottom: 50px;
+		.plans-group {
+			.planes_wrapper {
+				.plane_detail {
+					margin-bottom: 30px;
+				}
+			}
+		}
+	}
+}
+
+@include tablet {
+	.pricing {
+		margin-top: 50px;
+		margin-bottom: 50px;
+		.plans-group {
+			.planes_wrapper {
+				.plane_detail {
+					margin-bottom: 30px;
+				}
+			}
+		}
+	}
+}
+
+@include small-desktop {
+	.pricing {
+		margin-top: 70px;
+		margin-bottom: 70px;
+		.plans-group {
+			.planes_wrapper {
+				.plane_detail {
+					margin-bottom: 30px;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,58 @@
+/************************************
+    404 error
+*************************************/
+.error-404 {
+	margin-top: 100px;
+	margin-bottom: 100px;
+	img {
+		margin-bottom: 80px;
+	}
+	.solution--title {
+		@include typo(24px,700,$title,33px);
+		margin-bottom: 30px;
+	}
+	form {
+		display: flex;
+		input {
+			flex: 1;
+			margin-right: 15px;
+		}
+		button {
+			padding: 0 40px;
+			height: 50px;
+			border-radius: 2px;
+			i {
+				margin-left: 5px;
+			}
+		}
+	}
+}
+
+@include mobile {
+	.error-404 {
+		margin-top: 50px;
+		margin-bottom: 50px;
+		form {
+			input {
+				margin-right: 0;
+			}
+			button {
+				padding: 0 15px;
+			}
+		}
+	}
+}
+
+@include tablet {
+	.error-404 {
+		margin-top: 50px;
+		margin-bottom: 50px;
+	}
+}
+
+@include small-desktop {
+	.error-404 {
+		margin-top: 70px;
+		margin-bottom: 70px;
+	}
+}

@@ -1,0 +1,342 @@
+//Font face
+@mixin fontFace($family) {
+	@font-face { 
+		font-family: $family;
+		@content;
+	}
+}
+
+// Typography
+
+@mixin typo($font-sz,$font-weight,$color,$line-height) {
+	font-size: $font-sz;
+	color: $color;
+	line-height: $line-height;
+	@if $font-weight == 400 {
+		font-family: cerebrisans-regular;
+	} 
+	@else if $font-weight == 500 {
+		font-family: cerebrisans-medium;
+	} 
+	@else if $font-weight == 600 {
+		font-family: cerebrisans-semibold;
+	} 
+	@else if $font-weight == 700 {
+		font-family: cerebrisans-bold;
+	} 
+	@else {
+		@error "Unknown direction #{$font-weight}.";
+	}
+}
+
+
+// Link
+
+@mixin link($font-sz,$font-weight,$color,$line-height,$hvr-color) {
+	cursor: pointer;
+	font-size: $font-sz;
+	color: $color;
+	line-height: $line-height;
+	-webkit-transition: 0.3s ease;
+	   -moz-transition: 0.3s ease;
+	    -ms-transition: 0.3s ease;
+	     -o-transition: 0.3s ease;
+	        transition: 0.3s ease;
+	&:hover {
+		color: $hvr-color;
+		text-decoration: none;
+	}
+	@if $font-weight == 400 {
+		font-family: cerebrisans-regular;
+	} 
+	@else if $font-weight == 500 {
+		font-family: cerebrisans-medium;
+	} 
+	@else if $font-weight == 600 {
+		font-family: cerebrisans-semibold;
+	} 
+	@else if $font-weight == 700 {
+		font-family: cerebrisans-bold;
+	} 
+	@else {
+		@error "Unknown direction #{$font-weight}.";
+	}
+}
+
+@mixin icon-link($font-sz,$color,$line-height,$hvr-color) {
+	font-size: $font-sz;
+	color: $color;
+	line-height: $line-height;
+	display: inline-block;
+	-webkit-transition: 0.3s ease;
+	   -moz-transition: 0.3s ease;
+	    -ms-transition: 0.3s ease;
+	     -o-transition: 0.3s ease;
+	        transition: 0.3s ease;
+	&:hover {
+		color: $hvr-color;
+		text-decoration: none;
+	}
+}
+
+
+
+// Button
+
+@mixin button($bg-color,$color,$size,$btn-rd,$pd,$border-thick,$border-color,$hvr-bg-color,$hvr-color,$hvr-border-color) {
+	cursor: pointer;
+	background-color: $bg-color;
+	color: $color;
+	font-size: $size;
+	font-family: cerebrisans-bold;
+	border-radius: $btn-rd;
+	-webkit-border-radius: $btn-rd;
+    -moz-border-radius: $btn-rd;
+    -ms-border-radius: $btn-rd;
+    -o-border-radius: $btn-rd;
+	padding: $pd;
+	text-transform: capitalize;
+	border: $border-thick solid $border-color;
+	-webkit-transition: 0.3s ease;
+	   -moz-transition: 0.3s ease;
+	    -ms-transition: 0.3s ease;
+	     -o-transition: 0.3s ease;
+	        transition: 0.3s ease;
+	display: inline-block;
+	position: relative;
+	overflow: hidden;
+	z-index: 2;
+	&:before {
+		content: "";
+		position: absolute;
+		display: block;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		right: 100%;
+		background-color: $hvr-bg-color;
+		-webkit-transition: 0.3s ease;
+		   -moz-transition: 0.3s ease;
+		    -ms-transition: 0.3s ease;
+		     -o-transition: 0.3s ease;
+		        transition: 0.3s ease;
+	}
+	&:hover {
+		color: $hvr-color;
+		border: $border-thick solid $hvr-border-color;
+		text-decoration: none;
+		&:before {
+			right: 0;
+			z-index: -1;
+		}
+	}
+	&:focus {
+		outline: 0;
+		box-shadow: 0;
+	}
+} 
+
+
+// Input
+
+@mixin input($padding,$height) {
+	background-color: $white;
+	border: 1px solid $line;
+	padding: $padding;
+	height: $height;
+	width: 100%;
+	transition:border 0.3s ease;
+	@include typo(16px,400,$title,1);
+	&:focus {
+		outline: 0;
+		box-shadow: none;
+	}
+	&::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+		@include typo(16px,400,$disable,1);
+		line-height: -moz-block-height;
+	}
+	&:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+		@include typo(16px,400,$disable,1);
+		color:    #909;
+		line-height: -moz-block-height;
+	}
+	&::-moz-placeholder { /* Mozilla Firefox 19+ */
+		@include typo(16px,400,$disable,1);
+		color:    #909;
+		line-height: -moz-block-height;
+	}
+	&:-ms-input-placeholder { /* Internet Explorer 10-11 */
+		@include typo(16px,400,$disable,1);
+		line-height: -moz-block-height;
+	}
+	&::-ms-input-placeholder { /* Microsoft Edge */
+		@include typo(16px,400,$disable,1);
+		line-height: -moz-block-height;
+	}
+
+	&::placeholder { /* Most modern browsers support this now. */
+		@include typo(16px,400,$disable,1);
+		line-height: -moz-block-height;
+	}
+}
+
+// Text area
+
+@mixin textarea($padding) {
+	background-color: $white;
+	border: 1px solid $line;
+	padding: $padding;
+	width: 100%;
+	transition:border 0.3s ease;
+	@include typo(16px,400,$title,1);
+	&:focus {
+		outline: 0;
+		box-shadow: none;
+	}
+	&::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+		@include typo(16px,400,$disable,1);
+		line-height: -moz-block-height;
+	}
+	&:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+		color:    #909;
+		@include typo(16px,400,$disable,1);
+		line-height: -moz-block-height;
+	}
+	&::-moz-placeholder { /* Mozilla Firefox 19+ */
+		color:    #909;
+		@include typo(16px,400,$disable,1);
+		line-height: -moz-block-height;
+	}
+	&:-ms-input-placeholder { /* Internet Explorer 10-11 */
+		@include typo(16px,400,$disable,1);
+		line-height: -moz-block-height;
+	}
+	&::-ms-input-placeholder { /* Microsoft Edge */
+		@include typo(16px,400,$disable,1);
+		line-height: -moz-block-height;
+	}
+
+	&::placeholder { /* Most modern browsers support this now. */
+		@include typo(16px,400,$disable,1);
+		line-height: -moz-block-height;
+	}
+}
+
+//Select
+
+// Crate select from a <div> tag
+@mixin select($color,$bg-color,$input-rd,$border-color,$padding) {
+	color: $color;
+	background-color: $bg-color;
+	border-radius: $input-rd;
+    -webkit-border-radius: $input-rd;
+    -moz-border-radius: $input-rd;
+    -ms-border-radius: $input-rd;
+    -o-border-radius: $input-rd;
+	border: 1px solid $border-color;
+	padding: $padding;
+	transition:border 0.3s ease;
+	display: flex;
+	align-items: center;
+	font-family: cerebrisans-regular;
+	&:after {
+		content: "\33";
+		font-family: 'ElegantIcons';
+		margin-left: 5px;
+	}
+}
+
+//Crate select from a <select> tag
+@mixin select-input($border-color,$padding) {
+	@include typo(20px,400,$title,1);
+	cursor: pointer;
+	background-color: $white;
+	border: 2px solid $border-color;
+	padding: $padding;
+	transition:border 0.3s ease;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	-webkit-appearance: none;
+	&::placeholder {
+		color: $disable;
+		font-size: 16px;
+	}
+	&:focus {
+		outline: 0;
+	}
+}
+
+//Text line limit
+@mixin text-limit($line-to-show,$lh,$max-height: $line-to-show*$lh) {
+	overflow: hidden;
+   	text-overflow: ellipsis;
+	display: -webkit-box!important;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: $line-to-show; /* number of lines to show */
+	line-height: $lh;        /* fallback */
+	max-height: $max-height;       /* fallback */
+}
+
+//Padding only center
+@mixin padding-oc {
+	&:last-child {
+		padding-right: 0;
+	}
+	&:first-child {
+		padding-left: 0;
+	}
+}
+
+@mixin margin-oc {
+	&:last-child {
+		margin-right: 0;
+	}
+	&:first-child {
+		margin-left: 0;
+	}
+}
+
+// Responsive breakpoint
+
+@mixin mobile {
+  @media (max-width: $mobile-width) {
+    @content; 
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin small-desktop {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) and (max-width: #{$large-desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin medium-desktop {
+  @media (min-width: #{$large-desktop-width}) and (max-width: #{$xlarge-desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin large-desktop {
+  @media (min-width: #{$xlarge-desktop-width}) and (max-width: #{$xxlarge-desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin extra-large-desktop {
+  @media (min-width: $xxlarge-desktop-width) { 
+    @content;
+  }
+}

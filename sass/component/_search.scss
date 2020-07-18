@@ -1,0 +1,87 @@
+/************************************
+    Search
+*************************************/
+#search-box {
+    animation-duration: 0.3s;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgb(255,255,255);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 25;
+	#close-searchbox {
+		position: fixed;
+		top: 20px;
+		right: 20px;
+		@include icon-link(25px,$disable,1,$title);
+	}
+	form {
+		width: 50vw;
+		.input-group {
+			display: flex;
+			input {
+				@include input(0 0 15px 0,50px);
+				border-width: 0 0 2px 0;
+				font-size: 30px;
+				font-family: 'cerebrisans-bold';
+				&::placeholder {
+					font-size: 30px;
+					font-family: 'cerebrisans-bold';
+				}
+			}
+			button {
+				background: none;
+				border: 0;
+				font-size: 30px;
+				color: $disable;
+				cursor: pointer;
+				transition: 0.3s ease-out;
+				&:hover {
+					color: $title;
+				}
+			}
+		}
+	}
+}
+
+@include mobile {
+	#search-box {
+		form {
+			width: 80vw;
+			.input-group {
+				input {
+					font-size: 20px;
+					&::placeholder {
+						font-size: 20px;
+					}
+				}
+				button {
+					font-size: 20px;
+				}
+			}
+		}
+	}
+	.hide-xs {
+		display: none;
+	}
+}
+
+@include tablet {
+	#search-box {
+		form {
+			width: 80vw;
+		}
+	}
+}
+
+@include small-desktop {
+	#search-box {
+		form {
+			width: 60vw;
+		}
+	}
+}

@@ -1,0 +1,384 @@
+/************************************
+    Timeline
+*************************************/
+/* Media Queries */
+
+@mixin mq-tiny {
+	@media (min-width: 0px) {
+		@content;
+	}
+}
+
+@mixin mq-xs {
+	@media (min-width: $mobile-width) {
+		@content;
+	}
+}
+
+@mixin mq-sm {
+	@media (min-width: $tablet-width) {
+		@content;
+	}
+}
+
+@mixin mq-md {
+	@media (min-width: $desktop-width) {
+		@content;
+	}
+}
+
+@mixin mq-lg {
+	@media (min-width: 1300px) {
+		@content;
+	}
+}
+
+$background: #f7f7f7;
+$box-shadow: 0px 1px 22px 4px rgba(0, 0, 0, 0.07);
+$border: 3px solid rgba(191, 191, 191, 0.4);
+$items: 5;
+$rows: ceil($items/2);
+
+/* Card sizing */
+
+$card-height: 410px;
+$card-height--2: 130px;
+$card-width: 370px;
+$number-size: 35px;
+$stagger: 180px;
+$outer-margin: 90px;
+$bottom-margin-style2: 155px;
+$marker-size: 15px;
+$top-spacing: 20px;
+$card-padding: 30px;
+$line-width: 150px;
+$line-stagger: 20px;
+$date-stagger: 20px;
+
+/* Calculations */
+
+$container-height: $rows * ($card-height + $outer-margin);
+$container-height--2: 4 * ($card-height--2 + $bottom-margin-style2);
+$container-width: $card-width*2 + $outer-margin*2 + $line-width*2 + $line-stagger*2;
+$head-height: $number-size + 50;
+$head-height--2: 30px;
+$body-height: $card-height - $head-height;
+$body-height--2: $card-height--2 - $head-height--2;
+$marker-pos: $card-width + $line-width + $line-stagger;
+$date-pos: $card-width + $line-width + $line-stagger + $date-stagger;
+
+/* Placeholders */
+
+@include mq-lg {
+	%arrow {
+		position: absolute;
+		content: "";
+		width: $line-width;
+		height: 3px;
+		background-color: $blue;
+		display: block;
+		top: $top-spacing + 5;
+	}
+	%marker {
+		position: absolute;
+		content: "";
+		width: $marker-size;
+		height: $marker-size;
+		background-color: $white;
+		border-radius: $marker-size;
+		border: 3px solid $pink;
+		outline: 2px solid $white;
+		top: $top-spacing;
+	}
+}
+
+
+/* Some Cool Stuff */
+
+$counter: $items - $rows + 2;
+@for $i from 1 through $rows {
+	.demo-card:nth-child(#{$i*2-1}){ 
+		order: $i 
+	}
+	.demo-card:nth-child(#{$i*2}){ 
+		order: $counter 
+	}
+	$counter: $counter + 1;
+}
+
+/* Fonts */
+
+
+#timeline {
+	padding: 100px 0;
+	.demo-card-wrapper {
+		position: relative;
+		margin: auto; 
+		&::after {
+			z-index: 1;
+			content: "";
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 50%;
+			width: 3px;
+			background-color: $line;
+			@include mq-lg {
+				background-color: $blue;
+			}
+		}
+		@include mq-tiny {
+			padding-top: 50px;
+			.demo-card {
+				.date {
+					top: -50px;
+				}
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+			&::after {
+				height: auto;
+			}
+		}
+		@include mq-lg {
+			padding-top: 0;
+			display: flex;
+			flex-flow: column wrap;
+			width: $container-width;
+			height: $container-height;
+			margin: 0 auto;
+			&::after {
+				height: $rows * $card-height;	
+			}
+			
+		}
+		.demo-card {
+			position: relative;
+			display: block;
+			margin: 10px auto 150px;
+			max-width: 94%;
+			z-index: 2;
+			box-shadow: $box-shadow;
+			@include mq-tiny {
+				max-width: 90%;
+				.date {
+					top: -50px;
+				}
+			}
+			@include mq-sm {
+				max-width: 50%;
+			}
+			@include mq-md {
+				max-width: 40%;
+			}
+			@include mq-lg {
+				max-width: $card-width;
+				height: $card-height;
+				margin: $outer-margin;
+				margin-top: $outer-margin/2;
+				margin-bottom: $outer-margin/2;
+				.date {
+					top: 15px;
+				}
+				&:nth-child(odd) {
+					margin-right: $line-width + $line-stagger;
+					.date {
+						left: $date-pos;
+						transform: translateX(0)
+					}
+					.head {
+						justify-content: flex-end;
+						h5 {
+							margin-right: $card-padding;
+						}
+						&::after {
+							@extend %arrow;
+							left: $card-width + $line-stagger/2;
+						}
+						&::before {
+							@extend %marker;
+							left: $marker-pos - 6;
+						}
+					}
+					.body {
+						text-align: right;
+					}
+				}
+				&:nth-child(even) {
+					margin-left: $line-width + $line-stagger;
+					.date {
+						left: auto;
+						right: $date-pos;
+						transform: translateX(0)
+					}
+					.head {
+						justify-content: flex-start;
+						h5 {
+							margin-left: $card-padding;
+						}
+						&::after{
+							@extend %arrow;
+							width: $line-width - 3;
+							right: $card-width + $line-stagger/2;
+						}
+						&::before {
+							@extend %marker;
+							right: $marker-pos - 9;
+						}
+					}
+					.body {
+						text-align: left;
+					}
+				}
+				&:nth-child(2) {
+					margin-top: $stagger;
+				}
+			}
+			.date {
+				position: absolute;
+				background-color: #F7F5EF;
+				@include typo(14px,400,$title,1);
+				padding: 5px 10px;
+				min-width: 100px;
+				// top: -50px;
+				left: 50%;
+				transform: translateX(-50%)
+			}
+			.head {
+				position: relative;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: #fff;
+				font-family: 'cerebrisans-regular';
+				background-color: $white;
+				padding-top: 30px;
+				padding-bottom: 10px;
+				h5 {
+					@include typo(22px,700,$title,30px);
+					display: block;
+				}
+			}
+			.body {
+				background: #fff;
+				border-top: 0;
+				padding: 0 30px 30px;
+				@include mq-lg {
+					height: $body-height;
+				}
+				img {
+					display: block;
+					width: 100%;
+					margin-bottom: 15px;
+				}
+			}
+		}
+	}
+	.demo-card-wrapper_style2 {
+		@extend .demo-card-wrapper;
+		@include mq-tiny {
+			.demo-card {
+				&:last-child {
+					margin-bottom: $bottom-margin-style2/2;
+				}
+			}
+		}
+		@include mq-lg {
+			padding-top: 0;
+			display: flex;
+			flex-flow: column wrap;
+			width: $container-width;
+			height: 4 * ($card-height--2 + 155);
+			margin: 0 auto;
+			margin-bottom: $card-height--2 * -1;
+			&::after {
+				height: $container-height--2 - $bottom-margin-style2 ;	
+			}
+			
+		}	
+		.demo-card {
+			background-color: $white;
+			@include mq-tiny {
+				padding: 20px 30px;
+				text-align: center;
+				margin-bottom: 75px;
+				box-shadow: $box-shadow;
+			}
+			@include mq-sm {
+				max-width: 80%;
+			}
+			@include mq-md {
+				max-width: 50%;
+			}
+			@include mq-lg {
+				padding: 0;
+				box-shadow: none;
+				max-width: $card-width;
+				height: $card-height--2;
+				margin: $outer-margin;
+				margin-top: 0;
+				margin-bottom: $bottom-margin-style2;
+				&:nth-child(2) {
+					margin-top: 135px;
+				}
+				.date {
+					top: 15px;
+				}
+			}
+			.head {
+				padding-top: 0;
+				h6 {
+					@include typo(16px,700,$red,1);
+				}
+				@include mq-lg {
+					height: $head-height--2;
+				}
+			}
+			.body {
+				padding: 0;
+				.blog-title {
+					@include link(22px,700,$title,30px,$pink);
+					@include text-limit(2,30px);
+					margin-bottom: 10px;
+				}
+				.blog-info {
+					p {
+						@include typo(14px,400,$disable,1);
+						display: inline-block;
+						&.author {
+							&:after {
+								content: ".";
+								margin: 0 5px;
+							}
+						}
+					}
+				}
+				@include mq-lg {
+					height: $body-height--2;
+				}
+			}
+		}
+	}
+}
+
+@include mobile {
+	#timeline {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+}
+
+@include tablet {
+	#timeline {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+}
+
+@include small-desktop {
+	#timeline {
+		padding-top: 70px;
+		padding-bottom: 70px;
+	}
+}

@@ -1,0 +1,70 @@
+/************************************
+    FAQ
+*************************************/
+.FAQ {
+	margin-top: 100px;
+	margin-bottom: 100px;
+	.FAQ_content {
+		.FAQ_content__left {
+			.faq--title {
+				margin-bottom: 60px;
+			}
+		}
+		.FAQ_content__right { 
+			.faq--paragraph-title {
+				margin-bottom: 60px;
+			}
+		}
+	}
+}
+
+@include mobile {
+	.FAQ {
+		margin-top: 50px;
+		margin-bottom: 50px;
+		.FAQ_content {
+			.FAQ_content__left {
+				margin-bottom: 50px;
+			}
+			.FAQ_content__right {
+				.faq--paragraph-title {
+					margin-bottom: 30px;
+				}
+			}
+		}
+	}
+}
+
+@include tablet {
+	.FAQ {
+		margin-top: 50px;
+		margin-bottom: 50px;
+		.FAQ_content {
+			.FAQ_content__left {
+				margin-bottom: 50px;
+			}
+			.FAQ_content__right {
+				.faq--paragraph-title {
+					margin-bottom: 30px;
+				}
+			}
+		}
+	}
+}
+
+@include small-desktop {
+	.FAQ {
+		margin-top: 70px;
+		margin-bottom: 70px;
+		.FAQ_content {
+			.FAQ_content__left {
+				margin-bottom: 70px;
+			}
+			.FAQ_content__right {
+				.faq--paragraph-title {
+					margin-bottom: 50px;
+				}
+			}
+		}
+	}
+}

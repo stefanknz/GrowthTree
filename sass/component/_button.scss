@@ -1,0 +1,50 @@
+/************************************
+	Button
+*************************************/
+//Create normal button color types minxin
+@mixin button-type($color-name,$color) {
+	.btn-#{$color-name} {
+		@include button(#{$color},$white,16px,0px,15px 40px,2px,#{$color},$white,$title,#{$color});
+	    &.btn-round {
+	      border-radius: 999px;
+	    }
+	}
+}
+
+//Create outlinel button color types minxin
+@mixin button-outline-type($color-name,$color) {
+	.btn-outline-#{$color-name} {
+		@include button($trans,$title,16px,0px,15px 40px,2px,#{$color},#{$color},$white,#{$color});
+	    &.btn-round {
+	      border-radius: 999px;
+	    }
+	}
+}
+
+//Round icon button
+@mixin round-icon($diameter,$bg-color,$color,$size,$btn-rd,$pd,$border-thick,$border-color,$hvr-bg-color,$hvr-color,$hvr-border-color) {
+	height: $diameter;
+	width: $diameter;
+	line-height: $diameter;
+	text-align: center;
+	@include button($bg-color,$color,$size,$btn-rd,$pd,$border-thick,$border-color,$hvr-bg-color,$hvr-color,$hvr-border-color);
+}
+
+
+//Generate button type
+
+@include button-type(red,$red);
+@include button-type(blue,$blue);
+@include button-type(yellow,$yellow);
+@include button-type(green,$green);
+@include button-type(blue-green,$blue-green);
+@include button-type(pink,$pink);
+
+
+//Generate out button types
+@include button-outline-type(red,$red);
+@include button-outline-type(blue,$blue);
+@include button-outline-type(yellow,$yellow);
+@include button-outline-type(green,$green);
+@include button-outline-type(blue-green,$blue-green);
+@include button-outline-type(pink,$pink);

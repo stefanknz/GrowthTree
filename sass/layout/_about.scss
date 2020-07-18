@@ -1,0 +1,183 @@
+/************************************
+    About us
+*************************************/
+.about {
+	margin-top: 100px;
+	.about-content {
+		.experience-part {
+			.experience-part_content {
+				margin-bottom: 30px;
+				h1 {
+					margin-bottom: 10px;
+				}
+				h6 {
+					margin-bottom: 35px;
+				}
+				p {
+					margin-bottom: 40px;
+				}
+			}
+		}
+	}
+	.about-part {
+		margin-bottom: 100px;
+		.h1-section2 {
+			margin-top: 0;
+			.data-proof {
+				margin-top: 0!important;
+			}
+		}
+	}
+	.our-job-part {
+		.our-job-part_header {
+			margin-bottom: 60px;
+			h1 {
+				margin-bottom: 15px;
+			}
+		}
+		.our-job-part_services {
+			margin-top: 0;
+			.services-group-style2 {
+				margin: 0 -15px;
+				margin-bottom: 50px;
+				.service_block {
+					margin: 0 15px;
+				}
+			}
+		}
+	}
+}
+
+//About stye 2
+.about {
+	.about-content_style2 {
+		.about-part.experience-part {
+			.stack-img {
+				height: 570px;
+				width: 100%;
+				position: relative;
+				img {
+					position: absolute;
+					&.img-1 {
+						top: 0;
+						left: 0;
+						max-width: 80%;
+						z-index: 0;
+					}
+					&.img-2 {
+						right: 0;
+						bottom: 0;
+						max-width: 55%;
+						z-index: 1;
+					}
+				}
+			}
+		}
+	}
+	.hww-part {
+		@extend .our-job-part;
+		margin-bottom: 100px;
+		.hww-part_services {
+			.hww_steps {
+				text-align: center;
+				.hww_step__block {
+					.number {
+						height: 100px;
+						width: 100px;
+						text-align: center;
+						box-shadow: 0px 15px 45px rgba(200, 203, 215, 0.499645);
+						margin: auto;
+						border-radius: 999px;
+						margin-bottom: 25px;
+						span {
+							@include typo(45px,700,$green,100px);
+						}
+					}
+					.content {
+						h5 {
+							margin-bottom: 10px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@include mobile {
+	.about {
+		margin-top: 50px;
+		.about-content  {
+			.section-header-style-3 {
+				margin-bottom: 30px;
+			}
+			.chart {
+				margin-top: 30px;
+			}
+		}
+		.about-content_style2 {
+			.about-part.experience-part {
+				.stack-img {
+					height: 500px;
+				}
+			}
+		}
+		.about-part {
+			margin-bottom: 50px;
+		}
+		.hww-part {
+			.hww-part_services {
+				.hww_steps {
+					.hww_step__block {
+						margin-bottom: 30px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@include tablet {
+	.about {
+		margin-top: 50px;
+		.about-content  {
+			.section-header-style-3 {
+				margin-bottom: 30px;
+			}
+		}
+		.hww-part {
+			.hww-part_services {
+				.hww_steps {
+					.hww_step__block {
+						margin-bottom: 30px;
+					}
+				}
+			}
+		}
+		.about-part {
+			margin-bottom: 50px;
+		}
+		.about-content_style2 {
+			.about-part.experience-part {
+				.layout-2col-ti_left {
+					margin-bottom: 0;
+					.experience-part_content {
+						margin-bottom: 0;
+					}
+				}
+				.stack-img {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+@include small-desktop {
+	.about {
+		margin-bottom: 70px;
+		.about-part {
+			margin-bottom: 70px;
+		}
+	}
+}

@@ -1,0 +1,235 @@
+/************************************
+   	Homepage 03
+*************************************/
+.h3-section1 {
+	margin-top: 100px;
+	margin-bottom: 100px;
+	.benifit-illus {
+		img {
+			max-width: 100%;
+		}
+	}
+	.h1-section2 {
+		margin-top: 0;
+	}
+}
+
+.h3-section2 {
+	@extend .h2-section2;
+	margin-bottom: 40px;
+	.h1-section1 {
+		margin-top: 0;
+		.h1-section1_benefit {
+			.benefit-detail {
+				padding-left: 0;
+			}
+		}
+	}
+}
+
+.h3-section3 {
+	@extend .h1-section2;
+	margin-top: 0;
+	margin-bottom: 100px;
+	.data-proof {
+		margin-top: 0!important;
+	}
+}
+
+.h3-section4 {
+	@extend .h2-faqs-insights;
+	background-color: #F6F5F0;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	.h2-section3 {
+		margin-bottom: 0;
+		padding-top: 0;
+		padding-bottom: 0;
+		background-color: $trans;
+	}
+}
+
+.h3-section5 {
+	margin-bottom: 70px;
+	.advisors-group {
+		.advisor-block {
+			display: flex;
+			margin-bottom: 30px;
+			box-shadow: 0px 15px 45px rgba(200, 203, 215, 0.499645);
+			padding: 40px;
+			position: relative;
+			&:before {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 0;
+				height: 3px;
+				background-color: $green;
+				transition: 0.3s ease-out;
+			}
+			&:hover {
+				&:before {
+					width: 100%;
+				}
+			}
+			.advisor-info {
+				margin-right: 30px;
+				text-align: center;
+				img {
+					height: auto;
+					width: 190px;
+					object-fit: cover;
+					
+					margin-bottom: 15px;
+				}
+				.advisor-name {
+					h5 {
+						margin-bottom: 8px;
+					}
+					p {
+						@include typo(12px,400,$blue,1);
+						text-transform: uppercase;
+						letter-spacing: 1px;
+					}
+				}
+			}
+			.advisor-content {
+				.advisor-advice {
+					@include typo(16px,400,$title,28px);
+					margin-bottom: 15px;
+				}
+				.advisor-socials {
+					a {
+						@include  round-icon(40px,$white,$title,15px,999px,0,1px,$green,$green,$white,$green);
+						margin: 0 5px;
+						@include margin-oc;
+					}
+				}
+			}
+			
+		}
+	}
+}
+
+@include mobile {
+	.h3-section1 {
+		margin-top: 50px;
+		margin-bottom: 50px;
+	}
+	.h3-section3 {
+		margin-bottom: 50px;
+		.data-proof {
+			margin-top: 0;
+		}
+	}
+	.h3-section4 {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+	.h3-section5 {
+		margin-bottom: 50px;
+		.advisors-group {
+			.advisor-block {
+				flex-direction: column;
+				.advisor-info {
+					margin-right: 0;
+					margin-bottom: 30px;
+				}
+				.advisor-content {
+					text-align: center;
+				}
+			}
+		}
+	}
+}
+
+@include tablet {
+	.h3-section1 {
+		margin-bottom: 50px;
+		margin-top: 50px;
+		.layout-2col-ti_left {
+			margin-bottom: 0;
+			.benifit-illus {
+				display: none;
+			}
+		}
+	}
+	.h3-section2 {
+		margin-bottom: 20px;
+	}
+	.h3-section3 {
+		margin-bottom: 0;
+		.data-proof {
+			.data-group {
+				margin-bottom: 0;
+			}
+		}
+	}
+	.h3-section4 {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+	.h3-section5 {
+		margin-bottom: 20px;
+	}
+}
+
+@include small-desktop {
+	.h3-section1 {
+		margin-top: 70px;
+		margin-bottom: 70px;
+	}
+	.h3-section2 {
+		margin-bottom: 40px;
+		.h1-section1 {
+			.h1-section1_benefit {
+				.benefit-detail {
+					.benefit-detail_group {
+						margin-bottom: 30px;
+					}
+				}
+			}
+		}
+	}
+	.h3-section3 {
+		margin-bottom: 70px;
+	}
+	.h3-section4 {
+		padding-top: 70px;
+		padding-bottom: 70px;
+	}
+	.h3-section5 {
+		margin-bottom: 40px;
+		.advisors-group {
+			.advisor-block {
+				flex-direction: column;
+				.advisor-info {
+					margin-right: 0;
+					margin-bottom: 30px;
+				}
+				.advisor-content {
+					text-align: center;
+				}
+			}
+		}
+	}
+}
+
+@include desktop {
+	.h3-section5 {
+		margin-bottom: 40px;
+		.advisors-group {
+			.advisor-block {
+				flex-direction: column;
+				.advisor-info {
+					margin-right: 0;
+					margin-bottom: 30px;
+				}
+				.advisor-content {
+					text-align: center;
+				}
+			}
+		}
+	}
+}

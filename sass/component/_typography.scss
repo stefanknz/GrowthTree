@@ -1,0 +1,193 @@
+/************************************
+    Typography
+*************************************/
+@include fontFace('cerebrisans-regular') {
+	src:url('../fonts/cerebrisans-regular.eot');
+	src:url('../fonts/cerebrisans-regular.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/cerebrisans-regular.woff') format('woff'),
+		url('../fonts/cerebrisans-regular.woff2') format('woff2'),
+		url('../fonts/cerebrisans-regular.ttf') format('truetype'),
+		url('../fonts/cerebrisans-regular.svg') format('svg');
+}
+
+@include fontFace('cerebrisans-medium') {
+	src:url('../fonts/cerebrisans-medium.eot');
+	src:url('../fonts/cerebrisans-medium.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/cerebrisans-medium.woff') format('woff'),
+		url('../fonts/cerebrisans-medium.woff2') format('woff2'),
+		url('../fonts/cerebrisans-medium.ttf') format('truetype'),
+		url('../fonts/cerebrisans-medium.svg') format('svg'); 
+}
+
+@include fontFace('cerebrisans-semibold') {
+	src:url('../fonts/cerebrisans-semibold.eot');
+	src:url('../fonts/cerebrisans-semibold.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/cerebrisans-semibold.woff') format('woff'),
+		url('../fonts/cerebrisans-semibold.woff2') format('woff2'),
+		url('../fonts/cerebrisans-semibold.ttf') format('truetype'),
+		url('../fonts/cerebrisans-semibold.svg') format('svg');
+}
+
+@include fontFace('cerebrisans-bold') {
+	src:url('../fonts/cerebrisans-bold.eot');
+	src:url('../fonts/cerebrisans-bold.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/cerebrisans-bold.woff') format('woff'),
+		url('../fonts/cerebrisans-bold.woff2') format('woff2'),
+		url('../fonts/cerebrisans-bold.ttf') format('truetype'),
+		url('../fonts/cerebrisans-bold.svg') format('svg');
+}
+
+
+.heading {
+	@include typo(60px,700,$title,1);
+}
+
+.h1 {
+	@include typo(40px,700,$title,50px);
+}
+
+.h2 {
+	@include typo(35px,700,$title,40px);
+}
+
+.h3 {
+	@include typo(30px,700,$title,40px);
+}
+
+.h4 {
+	@include typo(24px,700,$title,30px);
+}
+
+.h5 {
+	@include typo(20px,700,$title,25px);
+}
+
+.h6 {
+	@include typo(18px,700,$title,24px);
+}
+
+.p {
+	@include typo(18px,400,$regular,32px);		
+}
+
+.p-16 {
+	@include typo(16px,400,$regular,28px);		
+}
+
+.font-light {
+	font-family: cerebrisans-regular!important;
+}
+
+.font-bold {
+	font-family: cerebrisans-bold!important;
+}
+
+.highlight-bg {
+	background-color: $blue;
+	padding: 0 5px;
+	color: $white;
+}
+
+.highlight-simple {
+	color: $title;
+}
+
+.block-quote {
+	padding: 30px;
+	border: 1px solid $line;
+	quote {
+		@include typo(20px,400,$title,32px);
+		display: block;
+		margin-bottom: 15px;
+	}
+	p {
+		color: $pink;
+		font-size: 16px;
+		&:before {
+			content: "-";
+			margin-right: 10px;
+		}
+	}
+}
+
+.ul-16 {
+	li {
+		@include typo(16px,400,$title,32px);
+	}
+}
+
+@include mobile {
+	.h1 {
+		@include typo(30px,700,$title,40px);
+	}
+	.heading {
+		@include typo(40px,700,$title,50px);
+	}
+}
+
+@include tablet {
+	.h1 {
+		@include typo(35px,700,$title,42px);
+	}
+}
+
+@include small-desktop {
+	.h1 {
+		@include typo(35px,700,$title,45px);
+	}
+	.heading {
+		@include typo(45px,700,$title,55px);
+	}
+}
+
+//Create link hover underline aimation 
+@mixin udl-animation($udl-color) {
+	position: relative;
+	overflow: hidden;
+	display: inline-block;
+	&:after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		display: block;
+		height: 2px;
+		background-color: $udl-color;
+		left: 0;
+		width: 0%;
+		transition: 0.4s ease-out;
+	}
+	&:hover {
+		&:after {
+			width: 100%;
+		}
+	}
+	@include mobile {
+		&:after {
+			display: none;
+		}
+	}
+	@include tablet {
+		&:after {
+			display: none;
+		}
+	}
+	@include small-desktop {
+		&:after {
+			display: none;
+		}
+	}
+}
+
+//Create text color 
+@mixin font-color($color-name,$color) {
+	.color-#{$color-name} {
+		color: $color!important;
+	}
+}
+
+@include font-color(red,$red);
+@include font-color(blue,$blue);
+@include font-color(yellow,$yellow);
+@include font-color(green,$green);
+@include font-color(blue-green,$blue-green);
+@include font-color(pink,$pink);

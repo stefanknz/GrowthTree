@@ -1,0 +1,146 @@
+/************************************
+	Page header
+*************************************/
+.page-header {
+	margin-bottom: 100px;
+	h1 {
+		margin-bottom: 20px;
+	}
+	.bread-crumb {
+		.bread-crumb__link {
+			font-size: 18px;
+			color: $title;
+			&.prv-page {
+				&:after {
+					content: "\35";
+					font-family: 'ElegantIcons';
+					margin: 0 5px;
+				}
+			}
+			&.crt-page {
+				color: $regular;
+			}
+		}
+	}
+}
+
+.page-header_parallax {
+	text-align: center;
+	padding: 150px 0;
+	background: {
+		size: cover;
+		position: center;
+		repeat: no-repeat;
+		// attachment: fixed;
+	}
+	h1 {
+		color: $white;
+	}
+}
+
+.page-header_team {
+	background-color: #F7F5EF;
+	.content {
+		padding: 150px 0;
+		background: {
+			image: url('../images/pages/team/chairman.png');
+			repeat: no-repeat;
+			position: left bottom;
+			size: 355px;
+		}
+		h1 {
+			margin-bottom: 10px;
+		}
+	}
+}
+
+.page-header_blog {
+	background: {
+		image: url('../images/blog/blog_detail/header_bg.png');
+		size: cover;
+		position: center;
+	}
+	padding: 150px 0;
+	.tag {
+		display: inline-block;
+		border-radius: 2px;
+		background-color: $blue;
+		@include typo(12px,700,$white,1);
+		padding: 8px 13px;
+		margin-bottom: 30px;
+	}
+	h1 {
+		@include typo(42px,700,$white,54px);
+		margin-bottom: 20px;
+	}
+	.blog-info {
+		p {
+			@include typo(16px,400,$white,1);
+			display: inline-block;
+			margin: 0 30px;
+			@include margin-oc;
+			i {
+				margin-right: 10px;
+				color: $pink;
+			}
+		}
+	}
+}
+
+.page-header_event {
+	@extend .page-header_blog;
+    background-image: url('../images/pages/event/header_bg.png');
+	.date {
+		@include typo(16px,400,$pink,1);
+	}
+}
+
+@include mobile {
+	.page-header {
+		margin-bottom: 70px;
+	}
+	.page-header_parallax {
+		padding: 75px;
+		h1 {
+			font-size: 35px;
+		}
+	}
+	.page-header_team {
+		.content {
+			background-image: none;
+		}
+	}
+	.page-header_blog {
+		.tag {
+			margin-bottom: 15px;
+		}
+		h1 {
+			font-size: 30px;
+		}
+		.blog-info {
+			p {
+				margin: 0 5px;
+			}
+		}
+	}
+}
+
+@include tablet {
+	.page-header {
+		margin-bottom: 70px;
+	}
+	.page-header_blog {
+		.tag {
+			margin-bottom: 20px;
+		}
+		h1 {
+			font-size: 35px;
+		}
+	}
+}
+
+@include small-desktop {
+	.page-header {
+		margin-bottom: 70px;
+	}
+}

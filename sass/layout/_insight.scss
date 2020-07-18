@@ -1,0 +1,313 @@
+/************************************
+   Insight
+*************************************/
+// Homepage 1 lastest insight layout
+.h1-lastest-insight {
+	margin-top: 100px;
+	margin-bottom: 100px;
+	.h1-lastest-insight_top {
+		margin-bottom: 50px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		a {
+			@include link(16px,700,$title,30px,$title);
+			@include udl-animation($red);
+		}
+	}
+	.lastest-insights {
+		.feature-lastest-insights {
+			&:hover {
+				.feature-lastest-insights_img {
+					img {
+						transform: scale(1.1);
+					}
+				}
+			}
+			.feature-lastest-insights_img {
+				display: block;
+				position: relative;
+				overflow: hidden;
+				margin-bottom: 30px;
+				img {
+					max-width: 100%;
+					width: 100%;
+					transition: 0.3s ease-out;
+					transform-origin: 50% 50%;
+				}
+			}
+			.feature-lastest-insights_content {
+				.insight-tag {
+					margin-bottom: 20px;
+				}
+				.insight-title {
+					@include link(40px,700,$title,50px,$red);
+					display: block;
+					margin-bottom: 20px;
+				}
+			}
+		}
+		.list-lastest-insights_group {
+			padding-left: 30px;
+			.list-lastest-insight {
+				padding-bottom: 20px;
+				border-bottom: 1px solid $line;
+				margin-bottom: 20px;
+				&:last-child {
+					margin-bottom: 0;
+					border: 0px;
+					padding-bottom: 0;
+				}
+				.list-lastest-insight_content {
+					.list-insight--title {
+						@include link(22px,700,$title,30px,$red);
+						@include text-limit(2,30px);
+						display: block;
+						margin-bottom: 5px;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Homepage 2 FAQ & Insight layout
+.h2-faqs-insights {
+	margin-top: 100px;
+	margin-bottom: 100px;
+	.faqs-accordion {
+		.accordion-box {
+			margin-bottom: 10px;
+			.accordion-section {
+				@include link(22px,700,$title,35px,$title);
+				@include udl-animation($green);
+				margin-bottom: 5px;
+			}
+			.faq-answer {
+				@include typo(16px,400,$disable,28px);
+			}
+		}
+	}
+	.h2-insights-group {
+		margin: 0 -15px;
+		&:hover {
+			.slider-arrow {
+				opacity: 1;
+			}
+		}
+		.slider-arrow  {
+			opacity: 0;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			&.prev-slider {
+				left: 15px;
+			}
+			&.next-slider {
+				right: 15px;
+			}
+		}
+		.insight-regular {
+			margin: 0 15px;
+		}
+	}
+}
+
+// Homepage 3 lastest insight layout
+.h3-lastest-insight {
+	margin-bottom: 100px;
+	.insights-group {
+		margin-left: -15px;
+		margin-right: -15px;
+		.insight-regular {
+			padding: 0 15px;
+			.insight-img {
+				p {
+					&:before {
+						color: $pink;
+					}
+				}
+			}
+			.insight-content {
+				a {
+					@include link(20px,700,$title,28px,$pink);
+				}
+			}
+		}
+		.slider-dots {
+			margin-top: 30px;
+			text-align: center;
+		}
+	}
+}
+
+// Homepage 4 faq insight layout
+.h4-faqs-insights {
+	h1 {
+		margin-bottom: 30px;
+	}
+	.insights-group {
+		h1 {
+			margin-bottom: 40px;
+		}
+	}
+}
+
+// Homepage 5 lastest insight layout
+.h5-lastest-insight {
+	margin-top: 100px;
+	.insights-group {
+		.insight-regular {
+			.insight-img {
+				.date {
+					&:before {
+						color: $blue-green;
+					}
+				}
+			}
+			.insight-content {
+				a {
+					@include link(20px,400,$title,28px,$blue-green);
+				}
+				.author {
+					span {
+						color: $blue-green;
+					}
+				}
+			}
+		}
+	}
+}
+
+@include mobile {
+	.h1-lastest-insight {
+		.h1-lastest-insight_top {
+			flex-direction: column;
+			justify-content: center;
+			margin-bottom: 30px;
+			h1 {
+				margin-bottom: 10px;
+			}
+		}
+		.lastest-insights {
+			.feature-lastest-insights {
+				margin-bottom: 30px;
+				.feature-lastest-insights_img {
+					margin-bottom: 15px;
+				}
+				.feature-lastest-insights_content {
+					.insight-title {
+						font-size: 26px;
+						line-height: 35px;
+						margin-bottom: 15px;
+					}
+				}
+			}
+			.list-lastest-insights_group {
+				padding-left: 0;
+			}
+		}
+	}
+	.h2-faqs-insights {
+		.faqs-accordion {
+			margin-bottom: 30px;
+		}
+		.insights-group {
+			.insight-regular {
+				margin-bottom: 30px;
+			}
+		}
+		.h2-insights-group {
+			.slider-arrow {
+				opacity: 1;
+			}
+		}
+	}
+	.h3-lastest-insight {
+		margin-bottom: 50px;
+	}
+	.h5-lastest-insight  {
+		margin-top: 50px;
+	}
+}
+
+@include tablet {
+	.h1-lastest-insight {
+		.h1-lastest-insight_top {
+			margin-bottom: 30px;
+		}
+		.lastest-insights {
+			.feature-lastest-insights {
+				margin-bottom: 30px;
+				.feature-lastest-insights_img {
+					margin-bottom: 15px;
+				}
+				.feature-lastest-insights_content {
+					.insight-title {
+						margin-bottom: 15px;
+						font-size: 28px;
+						line-height: 36px;
+					}
+				}
+			}
+			.list-lastest-insights_group {
+				padding-left: 0;
+			}
+		}
+	}
+	.h2-faqs-insights {
+		.faqs-accordion {
+			margin-bottom: 30px;
+		}
+		.h2-insights-group {
+			.slider-arrow {
+				opacity: 1;
+			}
+		}
+	}
+	.h3-lastest-insight {
+		margin-bottom: 50px;
+	}
+	.h5-lastest-insight  {
+		margin-top: 50px;
+	}
+}
+
+@include small-desktop {
+	.h1-lastest-insight {
+		.lastest-insights {
+			.feature-lastest-insights {
+				.feature-lastest-insights_img {
+					margin-bottom: 15px;
+				}
+				.feature-lastest-insights_content {
+					.insight-title {
+						margin-bottom: 15px;
+						font-size: 30px;
+						line-height: 40px;
+					}
+				}
+			}
+			.list-lastest-insights_group {
+				.list-lastest-insight {
+					&:nth-child(n+5) {
+						display: none;
+					}
+					&:nth-child(4) {
+						border-bottom: 0;
+					}
+				}
+			}
+		}
+	}
+	.h2-faqs-insights {
+		.h2-insights-group {
+			.slider-arrow {
+				opacity: 1;
+			}
+		}
+	}
+	.h3-lastest-insight {
+		margin-bottom: 70px;
+	}
+}

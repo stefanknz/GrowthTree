@@ -1,0 +1,29 @@
+/************************************
+    Slider css
+*************************************/
+.slider-dots {
+	li {
+		cursor: pointer;
+		height: 5px;
+		width: 20px;
+		background-color: #DDDBD7;
+		display: inline-block;
+		margin: 0 5px;
+		&.slick-active {
+			width: 40px;
+			background-color: $blue;
+		}
+	}
+}
+
+.slider-arrow {
+	@include button($white,$title,18px,2px,0,1px,$line,$pink,$white,$pink);
+	height: 40px;
+	width: 40px;
+	&:before {
+		display: none;
+	}
+	&:hover {
+		background-color: $pink;
+	}
+}

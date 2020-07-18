@@ -1,0 +1,76 @@
+/************************************
+   Layout
+*************************************/
+
+//2 column text - image layout
+
+.layout-2col-ti {
+	.layout-2col-ti_left {
+		text-align: left;
+	}
+	.layout-2col-ti_right {
+		text-align: left;
+		&.ta-right {
+			text-align: right;
+		} 
+	}
+}
+
+//2 column with line center
+.layout-2col-lc {
+	.layout-2col-lc_left {
+		padding-right: 50px;
+		border-right: 1px solid $line;
+	}
+	.layout-2col-lc_right {
+		padding-left: 80px;
+	}
+}
+
+@include mobile {
+	.layout-2col-ti {
+		.layout-2col-ti_left {
+			margin-bottom: 30px; 
+		}
+	}
+	.layout-2col-lc {
+		.layout-2col-lc_left {
+			padding-right: 0;
+			border-right: 0px;
+			margin-bottom: 50px;
+		}
+		.layout-2col-lc_right {
+			padding-left: 0;
+		}
+	}
+}
+
+@include tablet {
+	.layout-2col-ti {
+		.layout-2col-ti_left {
+			margin-bottom: 50px;
+			text-align: left;
+		}
+	}
+	.layout-2col-lc {
+		.layout-2col-lc_left {
+			padding-right: 0;
+			border-right: 0px;
+			margin-bottom: 50px;
+		}
+		.layout-2col-lc_right {
+			padding-left: 0;
+		}
+	}
+}
+
+@include small-desktop {
+	.layout-2col-lc {
+		.layout-2col-lc_left {
+			padding-right: 30px;
+		}
+		.layout-2col-lc_right {
+			padding-left: 50px;
+		}
+	}
+}

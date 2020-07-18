@@ -1,0 +1,163 @@
+/************************************
+    Footer
+*************************************/
+footer {
+	.footer-top {
+		padding: 60px 0;
+		border-bottom: 1px solid $line;
+		background: {
+			image: url('../images/homepage1/map.png');
+			position: center;
+			size: auto;
+			repeat: no-repeat;
+		}
+		.logo {
+			margin-bottom: 20px;
+		}
+		.website-introduce {
+			@include typo(14px,400,$regular,26px);
+		}
+		.footer-title {
+			@include typo(22px,700,$title,30px);
+			margin-bottom: 30px;
+		}
+		.footer-links_group {
+			margin-right: 80px;
+			&:last-child {
+				margin-right: 0;
+			}
+			li {
+				display: block;
+				.footer-link {
+					@include link(14px,400,$disable,30px,$blue);
+					@include udl-animation($blue);
+				}
+			}
+
+		}
+		.form-group {
+			.input-group {
+				margin-bottom: 20px;
+				display: flex;
+				input {
+					@include input(0 30px,50px);
+					max-width: 65%;
+					flex: 1;
+				}
+				button {
+					height: 50px;
+					padding: 0 20px;
+				}
+			}
+			label {
+				input {
+					margin-right: 10px;
+				}
+				@include typo(14px,400,$regular,19px);
+			}
+		}
+	}
+	.footer-bottom {
+		padding: 20px 0;
+		.copyright {
+			@include typo(14px,400,$disable,1)
+		}
+		.footer-socials {
+			a {
+				@include icon-link(15px,$title,1,$blue);
+				margin: 0 5px;
+				@include margin-oc;
+			}
+		}
+	}
+}
+
+//Create mixin to quick change footer color
+@mixin footer-change-color($color) {
+	.footer-top {
+		.footer-links_group {
+			li {
+				display: block;
+				.footer-link {
+					@include link(14px,400,$disable,30px,$color);
+					@include udl-animation($color);
+				}
+			}
+
+		}
+	}
+	.footer-bottom {
+		.footer-socials {
+			a {
+				@include icon-link(15px,$title,1,$color);
+			}
+		}
+	}
+}
+
+footer.yellow {
+	@include footer-change-color($yellow);
+}
+
+footer.pink {
+	@include footer-change-color($pink);
+}
+
+footer.green {
+	@include footer-change-color($green);
+}
+
+footer.blue-green {
+	@include footer-change-color($blue-green);
+	.footer-top {
+		.footer-title {
+			@include typo(22px,400,$title,30px);
+		}
+	}
+}
+
+@include mobile {
+	footer {
+		.footer-top {
+			.website-introduce {
+				margin-bottom: 30px;
+			}
+			.footer-links_group {
+				margin-bottom: 30px;
+			}
+			.footer-title {
+				margin-bottom: 15px;
+			}
+		}
+	}
+}
+
+@include tablet {
+	footer {
+		.footer-top {
+			.website-introduce {
+				margin-bottom: 30px;
+			}
+		}
+	}
+}
+
+@include small-desktop {
+	footer {
+		.footer-top {
+			.website-introduce {
+				margin-bottom: 30px;
+			}
+		}
+	}
+}
+
+@include desktop {
+	footer {
+		.footer-top {
+			.footer-links_group {
+				margin-right: 65px;
+			}
+		}
+	}
+}

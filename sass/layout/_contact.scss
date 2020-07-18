@@ -1,0 +1,94 @@
+/************************************
+    Contact
+*************************************/
+.contact-us {
+	margin-bottom: 100px;
+	.contact-infomation {
+		position: relative;
+		.infomation-box_wrapper {
+			position: absolute;
+			top: 50%;
+			left: 20%;
+			transform: translateY(-50%);
+			.infomation-box {
+				padding: 40px; 
+				background: $white;
+				box-shadow: 0px 15px 45px rgba(200, 203, 215, 0.499645);
+				display: inline-block;
+				
+				.ul-16 {
+					margin-bottom: 40px;
+					i {
+						margin-right: 10px;
+						color: $blue;
+					}
+				}
+				.opening-hours {
+					li {
+						@include typo(16px,400,$regular,36px);
+						display: flex;
+						justify-content: space-between;
+						span {
+							color: $title;
+							margin-left: 90px;
+						}
+					}
+				}
+			}
+		}
+	}
+	.contact-content {
+		margin-top: 100px;
+	}
+}
+
+@include mobile {
+	.contact-us {
+		margin-bottom: 50px;
+		iframe {
+			margin-bottom: 30px;
+		}
+		.contact-infomation {
+			.infomation-box_wrapper {
+				width: 100%;
+				position: unset;
+				width: 100%;
+				transform: translateY(0);
+				.infomation-box {
+					width: 100%;
+				}
+			}
+		}
+		.contact-content {
+			margin-top: 50px;
+		}
+	}
+}
+
+@include tablet {
+	.contact-us {
+		margin-bottom: 50px;
+		.contact-content {
+			.layout-2col-ti {
+				.layout-2col-ti_left {
+					margin-bottom: 0;
+				}
+				.layout-2col-ti_right {
+					display: none;
+				}
+			}
+		}
+		.contact-content {
+			margin-top: 50px;
+		}
+	}
+}
+
+@include small-desktop {
+	.contact-us {
+		margin-bottom: 70px;
+		.contact-content {
+			margin-top: 50px;
+		}
+	}
+}

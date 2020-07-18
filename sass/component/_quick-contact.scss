@@ -1,0 +1,105 @@
+/************************************
+    Quick contact
+*************************************/
+.quick-contact {
+	form {
+		padding: 70px 70px 60px 70px;
+		background: #FFFFFF;
+		box-shadow: 0px 15px 45px rgba(200, 203, 215, 0.499645);
+	}
+	.quick-contact_left {
+		h1 {
+			margin-bottom: 15px;
+		}
+		.input-group {
+			label {
+				@include typo(20px,400,$disable,23px);
+				display: block;
+				margin-bottom: 25px;
+			}
+			select {
+				@include select-input($red,15px 30px);
+				width: 100%;
+				&.yellow {
+					border-color: $yellow;
+				}
+				&.pink {
+					border-color: $pink;
+				}
+				&.green {
+					border-color: $green;
+				}
+				&.blue-green {
+					border-color: $blue-green;
+				}
+			}
+		}
+	}
+	
+	.quick-contact_right {
+		p {
+			margin-bottom: 50px;
+		}
+		.input-group {
+			display: flex;
+			input {
+			    flex-grow: 1;
+			    width: 70%;
+			}
+			button {
+				height: 50px;
+				padding: 0;
+				width: 30%
+			}
+		}
+	}
+}
+
+.quick-contact.quick-contact_h1 {
+	margin-bottom: 100px;
+}
+
+.quick-contact.quick-contact_h3 {
+	background-color: $white;
+	padding: 45px 32px;
+	.quick-contact_left {
+		margin-bottom: 30px;
+	}
+}
+
+@include mobile {
+	.quick-contact {
+		form { 
+			padding: 60px 30px 60px 30px;
+		}
+		.quick-contact_left {
+			margin-bottom: 30px;
+			h1 {
+				font-size: 30px;
+				line-height: 40px;
+				margin-bottom: 10px;
+			}
+			.input-group {
+				label {
+					margin-bottom: 15px;
+				}
+			}
+		}
+		.quick-contact_right {
+			p {
+				margin-bottom: 15px;
+			}
+		}
+	}
+}
+
+@include tablet {
+	.quick-contact {
+		form { 
+			padding: 60px 40px 60px 40px;
+		}
+		.quick-contact_left {
+			margin-bottom: 30px;
+		}
+	}
+}

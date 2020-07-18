@@ -1,0 +1,378 @@
+/************************************
+	Banner
+*************************************/
+//Homepage 01 banner
+.h1-banner {
+	background-color: #F7F5EF;
+	padding-top: 130px;
+	padding-bottom: 130px;
+	overflow: hidden;
+	background: {
+		image: url('../images/homepage1/249-Investation Guide.png');
+		repeat: no-repeat;
+		size: cover;
+		position: center;
+	}
+	.banner-content {
+		overflow: hidden;
+		.banner-title {
+			margin-bottom: 30px;
+			line-height: 70px;
+			animation-delay: .8s;
+		}
+		.banner-paragraph {
+			margin-bottom: 50px;
+			animation-delay: 1s;
+		}
+		.banner-btn-group {
+			animation-delay: 1.2s;
+			.banner-qoute {
+				@include button($white,$title,16px,0,19px 45px,0,$trans,$red,$white,$trans);
+				margin-right: 20px;
+				text-align: center;
+				&:hover {
+					box-shadow: 0px 15px 45px #DEE1EA;
+				}
+			}
+			.banner-video {
+				a {
+					@include link(16px,700,$title,1,$blue);
+					.video-btn {
+						padding: 15px 16px;
+						margin-right: 20px;
+						background-color: $red;
+						border-radius: 999px;
+						color: $white;
+					}
+					&:hover {
+						.video-btn {
+							box-shadow: 0px 15px 45px #DEE1EA;
+						}
+					}
+					p {
+						@include typo(16px,600,$title,1);
+					}				
+				}			
+			}
+		}
+	}
+	.banner-image {
+		img {
+			max-width: 100%;
+			animation-delay: .5s;
+		}
+	}
+}
+
+//Homepage 02 banner
+.h2-banner {
+	padding: 190px 0;
+	overflow: hidden;
+	background: {
+		image: url('../images/homepage2/banner.png');
+		repeat: no-repeat;
+		size: cover;
+		position: center;
+	}
+	.banner-content {
+		overflow: hidden;
+		.banner-subtitle {
+			@include typo(20px,700,$yellow,27px);
+			font-style: italic;
+			margin-bottom: 30px;
+		}
+		.banner-title {
+			margin-bottom: 60px;
+			animation-delay: 1s;
+		}
+		.banner-btn {
+			animation-delay: 1.6s;
+		}
+	}
+}
+
+//Homepage 03 banner
+.h3-banner {
+	padding: 170px 0;
+	overflow: hidden;
+	background: {
+		image: url('../images/homepage3/banner.png');
+		repeat: no-repeat;
+		size: cover;
+		position: center;
+	}
+	.banner-content {
+		.banner-title {
+			margin-bottom: 30px;
+			color: $white;
+		}
+		.banner-benefit {
+			margin-bottom: 40px;
+			li {
+				@include typo(18px,400,$white,36px);
+				&:before {
+					content: "\4e";
+					font-family: 'ElegantIcons';
+					margin-right: 10px;
+				}
+			}
+		}
+		.banner-btn {
+			@include button($white,$pink,16px,0,19px 45px,0,$trans,$white,$title,$trans);
+			text-align: center;
+			&:before {
+				display: none;
+			}
+			&:hover {
+				box-shadow: 0px 15px 45px #DEE1EA;
+			}
+		}
+	}
+}
+
+//Homepage 04 banner
+.h4-banner {
+	padding: 300px 0;
+	background: {
+		image: url('../images/homepage4/tim-m-G-HzIihLcwg-unsplash.jpg');
+		repeat: no-repeat;
+		size: cover;
+		position: center;
+	}
+	.banner-content {
+		.banner-subtitle {
+			font-style: italic;
+			color: $white;
+			font-family: 'cerebrisans-regular';
+			margin-bottom: 30px;
+		}
+		.banner-title {
+			margin-bottom: 60px;
+			color: $white;
+		}
+		.btn-group {
+			display: block;
+			a {
+				margin: 0 15px;
+				// @include margin-oc;
+			}
+		}
+		.btn-white-green {
+			@include button($white,$green,16px,0,15px 40px,2px,$white,$white,$white,$green);
+			&:before {
+				background-color: $green;
+			}
+		}
+	}
+}
+
+//Homepage 05 banner
+.h5-banner {
+	padding: 400px 0 120px 0;
+	background: {
+		image: url('../images/homepage5/banner.png');
+		repeat: no-repeat;
+		size: cover;
+		position: center;
+	}
+	.banner-content {
+		.banner-title {
+			color: $white;
+			text-transform: uppercase;
+			margin-bottom: 30px;
+		}
+		.banner-paragraph {
+			color: $white;
+			margin-bottom: 40px;
+		}
+		.banner-video {
+			display: inline-block;
+			a {
+				@include link(16px,700,$white,1,$blue-green);
+				.video-btn {
+					padding: 15px 16px;
+					margin-right: 20px;
+					background-color: $blue-green;
+					border-radius: 999px;
+					color: $white;
+					transition: 0.3s ease-out;
+				}
+				&:hover {
+					.video-btn {
+						box-shadow: 0px 15px 45px #DEE1EA;
+					}
+				}					
+			}			
+		}
+	}
+}
+
+@include mobile {
+	.h1-banner {
+		padding-top: 70px;
+		padding-bottom: 70px;
+		.banner-content {
+			.banner-title {
+				font-size: 40px;
+				line-height: 50px;
+				margin-bottom: 30px;
+			}
+			.banner-btn-group {
+				.banner-qoute {
+					padding: 19px 25px;
+				}
+			}
+		}
+	}
+	.h2-banner {
+		.banner-content {
+			.banner-title {
+				font-size: 40px;
+				line-height: 45px;
+				margin-bottom: 30px;
+			}
+		}
+	}
+	.h3-banner {
+		padding: 100px 0;
+		.banner-content {
+			margin-bottom: 30px;
+		}
+		.quick-contact {
+			display: none;
+		}
+	}
+	.h4-banner {
+		padding: 100px 0;
+		.banner-content {
+			.banner-title {
+				font-size: 40px;
+				line-height: 45px;
+				margin-bottom: 30px;
+			}
+			.btn-group {
+				.banner-btn {
+					margin-bottom: 15px;
+				}
+			}
+		}
+	}
+	.h5-banner {
+		padding: 200px 0 120px 0;
+	}
+}
+
+@include tablet {
+	.h1-banner {
+		padding-top: 50px;
+		padding-bottom: 50px;
+		.banner-content {
+			.banner-title {
+				font-size: 40px;
+				line-height: 45px;
+				margin-bottom: 20px;
+			}
+			.banner-paragraph {
+				margin-bottom: 25px;
+			}	
+			.banner-btn-group {
+				.banner-qoute {
+					padding: 19px 25px;
+				}
+			}
+		}
+	}
+	.h2-banner {
+		.banner-content {
+			.banner-subtitle {
+				margin-bottom: 15px;
+			}
+			.banner-title {
+				font-size: 40px;
+				line-height: 45px;
+				margin-bottom: 30px;
+			}
+		}
+	}
+	.h3-banner {
+		padding: 100px 0;
+		.banner-content {
+			// margin-bottom: 30px;
+			.banner-title {
+				font-size: 40px;
+				line-height: 45px;
+				margin-bottom: 30px;
+			}
+		}
+		.quick-contact {
+			display: none;
+		}
+	}
+	.h4-banner {
+		padding: 100px 0;
+		.banner-content {
+			.banner-title {
+				font-size: 40px;
+				line-height: 45px;
+				margin-bottom: 30px;
+			}
+			.btn-group {
+				.banner-btn {
+					margin-bottom: 15px;
+				}
+			}
+		}
+	}
+	.h5-banner {
+		padding: 200px 0 120px 0;
+	}
+}
+
+@include small-desktop {
+	.h1-banner {
+		padding-top: 70px;
+		padding-bottom: 70px;
+		.banner-content {
+			.banner-title {
+				font-size: 45px;
+				line-height: 55px;
+				margin-bottom: 20px;
+			}
+			.banner-btn-group {
+				.banner-qoute {
+					padding: 19px 25px;
+				}
+			}
+		}
+	}
+	.h4-banner {
+		padding: 150px 0; 
+	}
+}
+
+
+@include desktop {
+	.h1-banner {
+		padding-top: 100px;
+		padding-bottom: 100px;
+		.banner-content {
+			.banner-title {
+				font-size: 45px;
+				line-height: 55px;
+				margin-bottom: 20px;
+			}
+		}
+	}
+	.h2-banner {
+		.banner-content {
+			.banner-subtitle {
+				margin-bottom: 20px;
+			}
+			.banner-title {
+				font-size: 45px;
+				line-height: 55px;
+				margin-bottom: 35px;
+			}
+		}
+	}
+}

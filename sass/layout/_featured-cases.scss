@@ -1,0 +1,219 @@
+/************************************
+    Featured cases
+*************************************/
+.featured-cases {
+	.featured-cases_top {
+		margin-bottom: 50px;
+		.featured-cases--title {
+			h1 {
+				margin-bottom: 15px;
+			}
+			p {
+				@include typo(14px,400,$disable,18px);
+			}
+		}
+		a {
+			@include link(16px,700,$title,30px,$title);
+			@include udl-animation($yellow);
+		}
+	}
+
+	.featured-cases_bottom {
+		.cases-group, .study-case-group {
+			margin: 0 -15px;
+			margin-bottom: 40px;
+			.case-block {
+				display: flex;
+				align-items: center;
+				margin: 0 15px;
+
+				.case-content {
+					.case-date {
+						@include typo(14px,400,$yellow,1);
+						margin-bottom: 15px;
+					}
+					.case-title {
+						@include link(30px,700,$title,36px,$yellow);
+						@include text-limit(2,36px);
+						margin-bottom: 15px;
+					}
+					.case-describe {
+						@include typo(16px,400,$regular,30px);
+						@include text-limit(3,30px);
+						margin-bottom: 	50px;
+					}
+					.case-button {
+						@include round-icon(40px,$white,$yellow,18px,999px,0,1px,$yellow,$yellow,$white,$yellow);
+					}
+				}
+			}
+		}
+	}
+
+	.featured-cases_bottom__style1 {
+		.cases-group {
+			.case-block {
+				background-color: #f9f9f9;
+				height: 380px;
+				img {
+					flex: 1 1 40%;
+					height: 100%;
+					width: 40%;
+					object-fit: cover;
+				}
+				.case-content {
+					flex: 1 1 60%;
+					max-width: 60%;
+					padding: 0px 40px; 
+				}
+			}
+		}
+	}
+
+	.featured-cases_bottom__style2 {
+		.cases-group,.study-case-group {
+			.case-block {
+				position: relative;
+				padding: 40px;
+				background-color: #f9f9f9;
+				&:hover {
+					.case-content {
+						.case-date {
+							color: $white;
+						}
+						.case-title {
+							@include link(30px,700,$white,36px,$white);
+						}
+						.case-describe {
+							color: $white;
+						}
+					}
+					img {
+						opacity: 1;
+					}
+				}
+				.case-content {
+					position: relative;
+					z-index: 1;
+					.case-date {
+						color: $pink;
+					}
+					.case-title {
+						@include link(30px,700,$title,36px,$pink);
+						@include text-limit(2,36px);
+					}
+					.case-describe {
+						@include text-limit(3,30px);
+					}
+					.case-button {
+						@include button($white,$pink,18px,999px,0,1px,$pink,$pink,$white,$pink);
+
+					}
+				}
+				img {
+					position: absolute;
+					top: 0;
+					left: 0;
+					height: 100%;
+					width: 100%;
+					object-fit: cover;
+					z-index: 0;
+					transition: 0.3s ease-out;
+					opacity: 0;
+				}
+			}
+		}
+	}
+}
+
+//Homepage 2 feature case
+.h2-featured-cases {
+	margin-top: 100px;
+	margin-bottom: 100px;
+	overflow: hidden;
+}
+
+//Homepage 3 feature case
+.h3-featured-cases {
+	@extend .h2-featured-cases;
+	margin-bottom: 70px;
+	.featured-cases_top {
+		a {
+			@include link(16px,700,$title,30px,$pink);
+			@include udl-animation($blue);
+		}
+	}
+}
+
+@include mobile {
+	.featured-cases {
+		.featured-cases_top {
+			.featured-cases--title {
+				margin-bottom: 15px;
+			}
+		}
+		.featured-cases_bottom__style1 {
+			.cases-group {
+				.case-block {
+					flex-direction: column;
+					height: auto;
+					img {
+						display: none;
+					}
+					.case-content {
+						flex: 1 1 100%;
+						max-width: 100%;
+						padding: 40px;
+						.case-describe {
+							margin-bottom: 30px;
+						}	
+					}
+				}
+			}
+		}
+	}
+}
+
+@include tablet {
+	.featured-cases {
+		.featured-cases_top {
+			.featured-cases--title {
+				margin-bottom: 15px;
+			}
+		}
+		.featured-cases_bottom__style1  {
+			.cases-group {
+				.case-block {
+					height: 320px;
+					.case-content {
+						.case-describe {
+							margin-bottom: 15px;
+						}
+					}
+				}
+			}	
+		}
+	}
+}
+
+@include small-desktop {
+	.featured-cases { 
+		.featured-cases_top {
+			.featured-cases--title {
+				margin-bottom: 15px;
+			}
+		}
+		.featured-cases_bottom__style1  {
+			.cases-group {
+				.case-block {
+					height: 350px;
+					.case-content {
+						.case-describe {
+							margin-bottom: 30px;
+						}
+					}
+				}
+			}	
+		}
+	}
+}

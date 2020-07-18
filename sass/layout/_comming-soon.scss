@@ -1,0 +1,72 @@
+/************************************
+    Comming soon
+*************************************/
+.comming-soon {
+	text-align: center;
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: {
+		image: url('../images/pages/comming-soon/bg.png');
+		size: cover;
+		position: center;
+	}
+	.comming-soon_content {
+		.comming-soon--title {
+			color: $white;
+			margin-bottom: 15px;
+		}
+		.comming-soon--subtitle {
+			color: $white;
+			margin-bottom: 80px;
+		}
+		#countdown {
+			margin-bottom: 40px;
+			.countdown-number {
+				display: inline-block;
+				margin: 0 35px;
+				@include margin-oc;
+				span {
+					@include typo(60px,700,$white,1);
+					display: block;
+					margin-bottom: 10px;
+				}
+				p {
+					@include typo(14px,400,$white,1);
+				}
+
+			}
+		}
+		form {
+			display: flex;
+			input {
+				flex: 1;
+				
+			}
+			button {
+				padding: 0 40px;
+				height: 50px;	
+			}
+		}
+	}
+}
+
+@include mobile {
+	.comming-soon {
+		.comming-soon_content {
+			.comming-soon--title {
+				font-size: 35px;
+			}
+			#countdown {
+				.countdown-number {
+					margin: 0 15px;
+					span {
+						font-size: 50px;
+					}
+				}
+			}
+		}
+	}
+}

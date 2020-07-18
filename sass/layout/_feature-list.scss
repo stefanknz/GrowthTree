@@ -1,0 +1,40 @@
+/************************************
+    Feature list
+*************************************/
+.feature-list {
+	margin-bottom: 100px;
+	margin-top: 100px;
+	.feature-list-section {
+		margin-bottom: 80px;
+	}
+}
+
+@include mobile {
+	.feature-list {
+		margin-bottom: 50px;
+		margin-top: 50px;
+		.feature-list-section {
+			margin-bottom: 50px;
+		}
+	}
+}
+
+@include tablet {
+	.feature-list {
+		margin-bottom: 50px;
+		margin-top: 50px;
+		.feature-list-section {
+			margin-bottom: 50px;
+		}
+	}
+}
+
+@include small-desktop {
+	.feature-list {
+		margin-bottom:70px;
+		margin-top:70px;
+		.feature-list-section {
+			margin-bottom: 50px;
+		}
+	}
+}

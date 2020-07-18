@@ -1,0 +1,218 @@
+/************************************
+    Event
+*************************************/
+.event {
+	margin-top: 100px;
+	margin-bottom: 100px;
+	.events-search {
+		margin-bottom: 70px;
+		h1 {
+			margin-bottom: 30px;
+			text-align: center;
+		}
+		.events-search_box {
+			padding: 40px 50px;
+			background: #FFFFFF;
+			box-shadow: 0px 10px 45px rgba(200, 203, 215, 0.5);
+			border-radius: 5px;
+		}
+		input {
+			margin-bottom: 0;
+		}
+		label {
+			@include typo(22px,700,$title,1);
+			margin-bottom: 10px;
+			display: block;
+		}
+		button {
+			width: 100%;
+			padding: 15px 0;
+		}
+	}
+	.events-list {
+		h3 {
+			text-align: center;
+			margin-bottom: 40px;
+		}
+		.event_block {
+			transition: 0.3s ease-out;
+			margin-bottom: 30px;
+			&:hover {
+				box-shadow: 0px 15px 45px rgba(200, 203, 215, 0.5);
+				.event__img {
+					img {
+						transform: scale(1.1);
+					}
+				}
+			}
+			.event__img {
+				width: 100%;
+				height: 200px;
+				overflow: hidden;
+				position: relative;
+				img {
+					height: 100%;
+					width: 100%;
+					object-fit: cover;
+					object-position: center;
+					transition: 0.3s ease-out;
+				}
+				.price {
+					position: absolute;
+					top: 15px;
+					right: 15px;
+					display: inline-block;
+					border-radius: 2px;
+					background-color: $blue;
+					@include typo(12px,700,$white,1);
+					padding: 5px 13px;
+					margin-bottom: 30px;
+				}
+			}
+			.event__content {
+				padding: 30px;
+				background-color: $white;
+				border: 1px solid $line;
+				.date {
+					@include typo(14px,400,$pink,20px);
+					margin-bottom: 10px;
+				}
+				.event--title {
+					@include link(20px,700,$title,30px,$pink);
+					@include text-limit(2,30px);
+					margin-bottom: 20px;
+				}
+				.location {
+					@extend .date;
+					color: $regular;
+					margin-bottom: 15px;
+				}
+				.participants {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					.participants-avatars_group {
+						position: relative;
+						flex: 1;
+						width: 100%;
+						img {
+							height: 45px;
+							width: 45px;
+							object-fit: cover;
+							border-radius: 999px;
+							&:nth-child(n+2) {
+								margin-left: -15px;
+							}
+						}
+						span {
+							@include typo(12px,400,$title,1);
+							margin-left: 5px;
+							position: absolute;
+							top: 15px;
+						}
+					}
+					.event-btn {
+						@include button($white,$title,11px,2px,10px 15px,1px,$pink,$pink,$white,$pink);
+						text-align: center;
+					}
+				}
+			}
+		}
+	}
+}
+
+//Date picker z-index;
+#ui-datepicker-div {
+	z-index: 5!important;
+}
+
+//Event Detail
+.event {
+	.event-detail {
+		.description {
+			margin-bottom: 60px;
+			.ul-16 {
+				li {
+					color: $regular;
+					&:before {
+						content: "●";
+						color: $blue;
+						margin-right: 15px;
+					}
+				}
+			}
+		}
+		.event-detail_block {
+			margin-bottom: 60px;
+			padding: 40px;
+			border: 1px solid $line;
+			ul {
+				li {
+					@include typo(16px,400,$title,36px);
+					i {
+						color: $blue;
+						margin-right: 15px;
+					}
+				}
+			}
+		}
+		.event-detail_map {
+			iframe {
+				filter: grayscale(100)
+			}
+		}
+	}
+}
+
+@include mobile {
+	.event {
+		margin-top: 50px;
+		margin-bottom: 50px;
+		.events-search {
+			h1 {
+				font-size: 25px;
+			}
+			input {
+				margin-bottom: 30px;
+			}
+		}
+	}
+}
+
+@include tablet {
+	.event {
+		margin-top: 50px;
+		margin-bottom: 50px;
+		.events-search {
+			h1 {
+				font-size: 30px;
+			}
+			input {
+				margin-bottom: 30px;
+			}
+		}
+		.events-list {
+			.event_block {
+				.event__content {
+					.participants {
+						.event-btn {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@include small-desktop {
+	.event {
+		.events-search {
+			h1 {
+				font-size: 35px;
+			}
+		}
+		margin-top: 70px;
+		margin-bottom: 70px;
+	}
+}

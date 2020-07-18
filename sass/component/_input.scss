@@ -1,0 +1,28 @@
+/************************************
+    Input form
+*************************************/
+.input-form {
+	@include input(0 30px,50px);
+	margin-bottom: 20px;
+}
+
+.textarea-form {
+	@include textarea(20px 30px);
+	margin-bottom: 20px;
+}
+
+.checkbox-form {
+	margin-bottom: 20px;
+	input[type="checkbox"] {
+		margin-right: 10px;
+	}
+	label {
+		@include typo(16px,400,$title,19px);
+	}
+}
+
+.select-form {
+	@include select($title,$white,0px,$line,0px 15px);
+	height: 50px;
+	font-size: 16px;
+}

@@ -1,0 +1,119 @@
+/************************************
+   	Product
+*************************************/
+.product_block {
+	margin-bottom: 40px;
+	&:hover {
+		.product__img {
+			img {
+				transform: scale(1.1);
+			}
+			.product__action {
+				a {
+					opacity: 1;
+					transform: translate3d(0, 0 , 0);
+				}
+			}
+		}
+	}
+	.product__img {
+		display: block;
+		width: 100%;
+		height: 300px;
+		position: relative;
+		margin-bottom: 20px;
+		overflow: hidden;
+		img {
+			width: 100%;
+			height: 100%;
+			object-position: center;
+			object-fit: cover;
+			transition: 0.3s ease-out;
+		}
+		.product-status {
+			position: absolute;
+			top: 20px;
+			left: 20px;
+			display: inline-block;
+			border-radius: 2px;
+			@include typo(12px,700,$white,1);
+			padding: 5px 13px;
+			&.discount {
+				background-color: $pink;
+			}
+			&.new {
+				background-color: $blue;
+			}
+		}
+		.product__action {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			width: 100%;
+			text-align: center;
+			a {
+				@include button($white,$title,16px,999px,0,0px,$white,$pink,$white,$white);
+				height: 40px;
+				width: 40px;
+				line-height: 40px;
+				text-align: center;
+				margin: 0 5px;
+				@include margin-oc;
+				opacity: 0;
+				transform: translate3d(0, 10px, 0);
+				transition-property: transform, opacity;
+				&:nth-child(2) {
+					transition-delay: 0.1s;
+				}
+				&:nth-child(3) {
+					transition-delay: 0.2s;
+				}
+			}
+		}
+	}
+	.product__content {
+		.product-name {
+			@include link(18px,400,$title,24px,$pink);
+			@include text-limit(1,24px);
+			margin-bottom: 10px;
+		}
+		.price_block {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			.product-price {
+				@include typo(18px,700,$title,1);
+				display: block;
+				&.discounted {
+					color: $pink;
+					span {
+						@include typo(16px,400,$regular,1);
+						margin-left: 10px;
+					}
+				}
+			}
+			.product-rate {
+				i {
+					font-size: 16px;
+					color: #EDBB0E;
+				}
+			}
+		}
+	}
+}
+
+@include mobile {
+	.product_block {
+		.product__img {
+			height: auto;
+		}
+		.product__content {
+			.price_block {
+				.product-rate {
+					display: none;
+				}
+			}
+		}
+	}
+}

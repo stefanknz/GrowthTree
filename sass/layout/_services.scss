@@ -1,0 +1,122 @@
+/************************************
+	Services page
+*************************************/
+.services {
+	margin-top: 100px;
+	margin-bottom: 70px;
+	.services-group {
+		.service_block {
+			display: flex;
+			margin-bottom: 40px;
+			.service-icon {
+				margin-right: 40px;
+				img {
+					width: 66px;
+				}
+			}
+			.service-content {
+				.service-content--pragraph {
+					margin-bottom: 20px;
+				}
+				a {
+					@include link(14px,700,$title,1,$title);
+					&:hover {
+						&:after {
+							margin-left: 15px;
+						}
+					}
+					&:after {
+						content: "\24";
+						font-family: 'ElegantIcons';
+						color: $pink;
+						margin-left: 5px;
+						font-size: 12px;
+						transition: 0.3s ease-out;
+					}
+				}
+			}
+		}
+	}
+
+	.services-group-style2 {
+		@extend .services-group;
+		.service_block {
+			display: block;
+			padding: 50px;
+			background-color: $white;
+			transition: 0.3s ease-out;
+			position: relative;
+			border: 1px solid $line;
+			&:after {
+				content: "";
+				position: absolute;
+				display: block;
+				height: 3px;
+				background-color: $blue;
+				bottom: 0;
+				left: 0;
+				width: 0;
+				transition: 0.3s ease-out;
+			}
+			&:hover {
+				box-shadow: 0px 15px 45px rgba(200, 203, 215, 0.499645);
+				&:after {
+					width: 100%;
+				}
+			}
+			.service-icon {
+				margin-bottom: 20px;
+				margin-right: auto;
+				margin-left: auto;
+				text-align: center;
+				height: 100px;
+				width: 100px;
+				background: #FFFFFF;
+				box-shadow: 0px 15px 45px rgba(200, 203, 215, 0.499645);
+				border-radius: 999px;
+				i {
+					font-size: 35px;
+					line-height: 100px;
+					color: $blue;
+				}
+			}
+			.service-content {
+				text-align: center;
+			}
+		}
+	}
+}
+
+@include mobile {
+	.services { 
+		margin-top: 50px;
+		margin-bottom: 30px;
+	}
+}
+
+@include tablet {
+	.services {
+		margin-top: 50px;
+		margin-bottom: 30px;
+		.services-group {
+			.service_block {
+				flex-direction: column;
+				.service-icon {
+					margin-right: 0;
+					margin-bottom: 15px;
+					margin: auto;
+				}
+				.service-content {
+					text-align: center;
+				}
+			}
+		}
+	}
+}
+
+@include small-desktop {
+	.services {
+		margin-top: 70px;
+		margin-bottom: 40px;
+	}
+}

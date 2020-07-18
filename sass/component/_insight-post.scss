@@ -1,0 +1,66 @@
+/************************************
+   Insight post
+*************************************/
+.insight-tag {
+	@include typo(16px,700,$red,22px);
+}
+
+.insight-public-date {
+	p {
+		@include typo(14px,400,$disable,16px);
+		&.author {
+			&:after {
+				content: ".";
+				padding: 0 15px;
+			}
+		}
+	}
+}
+
+.insight-regular {
+	&:hover {
+		.insight-img {
+			img {
+				transform: scale(1.1);
+			}
+		}
+	}
+	.insight-img {
+		position: relative;
+		margin-bottom: 20px;
+		overflow: hidden;
+		img {
+			max-width: 100%;
+			width: 100%;
+			transition: 0.3s ease-out;
+		}
+		p {
+			position: absolute;
+			bottom: 0;
+			background-color: $white;
+			left: 20px;
+			@include typo(12px,400,$disable,14px);
+			padding: 5px 15px;
+			&:before {
+				content: "\f133";
+				font-family: 'Font Awesome 5 Free';
+				margin-right: 10px;
+				color: $yellow;
+			}
+		}
+	}
+	.insight-content {
+		a {
+			@include link(20px,700,$title,28px,$yellow);
+			display: block;
+			margin-bottom: 15px;
+		}
+		.author {
+			@include typo(12px,400,$disable,14px);
+			span {
+				color: $blue;
+				margin-left: 5px;
+			}
+		}
+	}
+}

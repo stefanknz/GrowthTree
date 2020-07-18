@@ -1,0 +1,74 @@
+/************************************
+	Accordion style
+*************************************/
+.faqs-accordion.accordion-block {
+	.accordion-header {
+		border: 0;
+		padding: 0;
+		background-color: $trans;
+		margin-bottom: 5px;
+		span {
+			@include link(22px,700,$title,35px,$title);
+			@include udl-animation($green);
+		}
+		&.ui-state-focus {
+			outline: 0;
+		}
+	}
+	.accordion-content {
+		@include typo(16px,400,$disable,28px);
+		padding: 0;
+		border: 0;
+		margin-bottom: 15px;
+		background-color: $trans;
+	}
+}
+
+.faqs-accordion-style2 {
+	.accordion-header {
+		border: 0;
+		padding: 0;
+		background-color: $trans;
+		margin-bottom: 5px;
+		.ui-accordion-header-icon {
+			border: 1px solid $pink;
+			margin-top: 10px;
+			float: right;
+			padding: 8px;
+			margin-left: 30px;
+		}
+		.accordion-title {
+			@include link(22px,700,$title,35px,$white);
+		}
+		&.ui-state-active {
+			background-color: $blue;
+			.accordion-title {
+				color: $white;
+			}
+			.ui-accordion-header-icon {
+				color: $white;
+				border-color: $white;
+			}
+		}
+		&.ui-state-focus {
+			outline: 0;
+
+		}
+		&.ui-state-hover {
+			background-color: $blue;
+			.accordion-title {
+				color: $white;
+			}
+			.ui-accordion-header-icon {
+				color: $white;
+				border-color: $white;
+			    background-image: url(images/ui-icons_ffffff_256x240.png);
+			}
+		}
+	}
+	.accordion-content {
+		@include typo(16px,400,$disable,28px);
+		padding: 0;
+		border: 0;
+	}
+}
